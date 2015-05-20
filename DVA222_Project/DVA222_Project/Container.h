@@ -4,10 +4,14 @@
 #include <vector>
 #include "Header.h"
 #include "Graphix.h"
+#include "Label.h"
 class Container : public ControlBase
 {
 private:
+	Label titleLabel;
 	Color background;
+	Color border;
+	std::string title;
 	std::vector<ControlBase*> controls;
 public:
 	Container();
@@ -15,6 +19,9 @@ public:
 	~Container();
 
 	virtual void Add(ControlBase* element);
+	virtual void SetTitle(std::string title);
+	virtual void SetBackground(Color background);
+	virtual void SetBorder(Color border);
 
 	virtual void OnPaint();
 	virtual void OnLoaded();

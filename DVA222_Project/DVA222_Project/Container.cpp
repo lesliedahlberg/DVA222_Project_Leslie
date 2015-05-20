@@ -8,7 +8,7 @@ Container::Container()
 
 Container::Container(int locX, int locY, int width, int height) : ControlBase(locX, locY, width, height)
 {
-	background = Color(34, 21, 67);
+	titleLabel.setPosition(locX, locY);
 }
 
 Container::~Container()
@@ -21,10 +21,32 @@ void Container::Add(ControlBase* element)
 	controls.push_back(element);
 }
 
+void Container::SetTitle(std::string title)
+{
+	this->title = title;
+	titleLabel.setText(title);
+	titleLabel.setColor(256, 0, 256);
+	
+}
+
+void Container::SetBackground(Color background)
+{
+	this->background = background;
+}
+
+void Container::SetBorder(Color border)
+{
+	this->border = border;
+}
+
 void Container::OnPaint()
 {
 	SetColor(background.R, background.G, background.B);
 	FillRectangle(X, Y, Width, Height);
+	SetColor(border.R, border.G, border.B);
+	DrawRectangle(X, Y, Width, Height);
+
+	titleLabel.OnPaint();
 
 	int length = controls.size();
 	for (size_t i = 0; i < length; i++)

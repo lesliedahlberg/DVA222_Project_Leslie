@@ -30,6 +30,9 @@ int _tmain(int argc, char** argv)
 	Container* container = new Container(50, 50, 400, 400);
 	container->Add(label1);
 	container->Add(button);
+	container->SetTitle("Title");
+	container->SetBackground(Color(34, 87, 245));
+	container->SetBorder(Color(200, 0, 100));
 	
 
 
