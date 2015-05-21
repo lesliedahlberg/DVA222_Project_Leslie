@@ -8,6 +8,7 @@
 #include "Button.h"
 #include "Label.h"
 #include "Container.h"
+#include "Panel.h"
 
 using namespace std;
 
@@ -20,23 +21,26 @@ int _tmain(int argc, char** argv)
     //------------------------------------------------------------------------------------------------------------------------------------
     
 	//ControlBase* button = new MyButton(10,10,190,60);
-	Label* label1 = new Label(300, 300);
+	Label* label1 = new Label(0, 0);
 	label1->setText("AJ AJ");
 	label1->setColor(256, 256, 256);
 
-	Button* button = new Button(60, 60, 200, 50);
+	Button* button = new Button(0, 0, 200, 50);
 	button->SetButtonText("Click Here!");
 
-	Container* container = new Container(50, 50, 400, 400);
-	container->Add(label1);
-	container->Add(button);
-	container->SetTitle("Title");
-	container->SetBackground(Color(34, 87, 245));
-	container->SetBorder(Color(200, 0, 100));
-	
+	Panel* smallPanel = new Panel(0, 0, 100, 100);
+	smallPanel->SetBackground(Color(256, 0, 0));
 
+	Panel* smallPanel2 = new Panel(10, 10, 50, 50);
+	smallPanel2->SetBackground(Color(0, 0, 256));
 
-	ControlBase* base = container;
+	smallPanel->Add(smallPanel2);
+
+	Panel* panel = new Panel(100, 100, 200, 200);
+	panel->Add(smallPanel);
+	panel->SetBackground(Color(0, 256, 0));
+
+	ControlBase* base = panel;
 	InitOGL(argc, argv, base);
 
     delete base;

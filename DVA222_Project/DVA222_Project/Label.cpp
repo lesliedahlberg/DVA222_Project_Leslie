@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ #include "stdafx.h"
 #include "Label.h"
 #include "Graphix.h"
 #include "glut.h"
