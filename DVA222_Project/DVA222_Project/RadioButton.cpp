@@ -12,7 +12,7 @@ RadioButton::RadioButton(int x, int y)
 : UIControl(x, y, 16, 16)
 {
 	hit = fillButton = false;
-	buttonText.SetLocation(Point(0, 16));
+	buttonText.SetLocation(Point(8 - 5, 16 + 8));
 	inGroup = false;
 }
 
@@ -20,7 +20,7 @@ RadioButton::RadioButton(int x, int y, RadioButtonGroup* group)
 : UIControl(x, y, 16, 16)
 {
 	hit = fillButton = false;
-	buttonText.SetLocation(Point(0, 16));
+	buttonText.SetLocation(Point(8-5, 16+8));
 	parent = group;
 	inGroup = true;
 }
