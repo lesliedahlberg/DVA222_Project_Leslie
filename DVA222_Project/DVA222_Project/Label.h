@@ -5,12 +5,13 @@
 #include "glut.h"
 #include <string>
 #include <stdlib.h>
+#include "Header.h"
 class Label :
 	public UIControl
 {
 private:
 	std::string text;
-	int r, g, b;
+	Color color;
 
 public:
 	Label();
@@ -23,7 +24,7 @@ public:
 
 	//Set, Get
 	virtual void setText(std::string text);
-	virtual void setColor(int r, int g, int b);
+	virtual void setColor(Color color);
 
 	//The class is overriding the following Event Handlers inherited from the base class 
 	virtual void OnPaint();

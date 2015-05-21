@@ -14,7 +14,7 @@ Button::Button(int locX, int locY, int width, int height)
 	borderThickness = 2;
 	background = Color(200, 200, 200);
 	border = Color(0, 0, 0);
-	buttonText.setColor(0, 0, 0);
+	buttonText.setColor(Color(0, 0, 0));
 	SetLocation(X, Y);
 }
 
@@ -33,7 +33,7 @@ void Button::SetLocation(int locX, int locY)
 {
 	X = locX;
 	Y = locY;
-	buttonText.setPosition(locX + borderThickness * 4, locY + borderThickness * 4 + 10);
+	buttonText.SetLocation(locX + borderThickness * 4, locY + borderThickness * 4 + 10);
 }
 
 void Button::SetSize(int Width, int Height)
@@ -67,15 +67,15 @@ void Button::OnPaint()
 	if (pressed){
 		background = Color(100, 100, 100);
 		border = Color(0, 0, 0);
-		buttonText.setColor(256, 256, 256);
+		buttonText.setColor(Color(0, 0, 0));
 	}else if (hit){
 		background = Color(150, 150, 150);
 		border = Color(0, 0, 0);
-		buttonText.setColor(0, 0, 0);
+		buttonText.setColor(Color(0, 0, 0));
 	}else{
 		background = Color(200, 200, 200);
 		border = Color(0, 0, 0);
-		buttonText.setColor(0, 0, 0);
+		buttonText.setColor(Color(0, 0, 0));
 	}
 	Draw();
 }

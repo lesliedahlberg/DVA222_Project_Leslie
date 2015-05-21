@@ -21,7 +21,7 @@ Label::~Label()
 
 void UIControl::SetZeroPointForControls(Point zeroPoint)
 {
-
+	
 }
 
 void UIControl::SetZeroPoint(Point zeroPoint)
@@ -39,19 +39,17 @@ void Label::setText(std::string text)
 {
 	this->text = text;
 }
-void Label::setColor(int r, int g, int b)
+void Label::setColor(Color color)
 {
-	this->r = r;
-	this->b = b;
-	this->g = g;
+	this->color = color;
 }
 
 
 void Label::OnPaint()
 {
 	//PAINT
-	SetColor(r, g, b);
-	DrawString(text, X+zeroPoint.X, Y+zeroPoint.Y);
+	SetColor(color.R, color.B, color.G);
+	DrawString(text, X+zeroPoint.X, Y+zeroPoint.Y+12);
 }
 
 void Label::OnLoaded()
