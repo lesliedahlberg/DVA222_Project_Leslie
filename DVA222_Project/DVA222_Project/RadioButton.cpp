@@ -13,6 +13,9 @@ RadioButton::RadioButton(int x, int y)
 {
 	hit = fillButton = false;
 	buttonText.setColor(textColor);
+	buttonText.SetLocation(Point(0, 0));
+	buttonText.setColor(Color(256, 256, 50));
+	buttonText.setText("HELLO");
 }
 
 RadioButton::~RadioButton()
@@ -46,9 +49,8 @@ void RadioButton::SetZeroPointForControls(Point zeroPoint)
 
 void RadioButton::OnPaint(void)
 {
-	buttonText.SetLocation(Point(X+12+zeroPoint.X, Y+5+zeroPoint.Y));
-	buttonText.OnPaint();
-	SetColor(button.R, button.G, button.B);
+	
+	/*SetColor(button.R, button.G, button.B);
 	DrawCircle(X+zeroPoint.X, Y+zeroPoint.Y, Width / 2);
 	if (fillButton)
 	{
@@ -58,7 +60,9 @@ void RadioButton::OnPaint(void)
 			DrawCircle(X+zeroPoint.X, Y+zeroPoint.Y, currentRadius);
 			currentRadius -= i/2;
 		}
-	}
+	}*/
+	
+	buttonText.OnPaint();
 }
 
 void RadioButton::OnMouseDown(int button, int x, int y)
