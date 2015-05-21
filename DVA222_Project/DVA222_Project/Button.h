@@ -25,6 +25,7 @@ public:
 	Button(int locX, int locY, int width, int height);
 	~Button();
 
+	virtual void SetZeroPoint(Point zeroPoint);
 	virtual void SetZeroPointForControls(Point zeroPoint);
 	virtual void SetButtonText(std::string text);
 	virtual void SetSize(int Width, int Height);

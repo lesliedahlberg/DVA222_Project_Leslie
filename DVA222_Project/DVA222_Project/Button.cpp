@@ -22,6 +22,12 @@ Button::~Button()
 	hit = pressed = false;
 }
 
+void Button::SetZeroPoint(Point zeroPoint)
+{
+	UIControl::SetZeroPoint(zeroPoint);
+	SetZeroPointForControls(zeroPoint);
+}
+
 void Button::SetZeroPointForControls(Point zeroPoint)
 {
 	buttonText.SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
