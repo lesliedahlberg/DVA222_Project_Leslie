@@ -13,6 +13,7 @@ protected:
 	bool hit, pressed, moving;
 	Color background;
 	Point clickLocation;
+	Point difference;
 	Panel* panel;
 	Label* title;
 public:

@@ -221,7 +221,7 @@ void InitOGL(int argc, char** argv, ControlBase *window)
 	//Initialise GLUT with command-line parameters. 
     glutInit(&argc, argv);
     //Set Display Mode
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     //Set the window size
     glutInitWindowSize(800,600);	
     //Set the window position

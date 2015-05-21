@@ -13,6 +13,7 @@ Window::Window(int locX, int locY, int width, int height) : UIControl(locX, locY
 	xOff = 0;
 	yOff = 20;
 	pressed = hit = moving = false;
+	clickLocation = Point(0, 0);
 	panel = new Panel(0, 0, width, height);
 	title = new Label(0, 0);
 	title->setColor(Color(50, 50, 50));
@@ -70,10 +71,10 @@ void Window::OnKeyboard(unsigned char key, int x, int y)
 
 void Window::OnMouseUp(int button, int x, int y)
 {
-	if (moving)
+	/*if (moving)
 	{
 		SetLocation(Point(X - (clickLocation.X - x), Y - clickLocation.Y + y));
-	}
+	}*/
 	pressed = moving = false;
 	panel->OnMouseUp(button, x, y);
 }
@@ -97,7 +98,19 @@ void Window::OnMouseMove(int button, int x, int y)
 	}
 	if (pressed)
 	{
-		moving = true;
+		if (moving)
+		{
+
+		}
+		else{
+			moving = true;
+			clickLocation = Point(x, y);
+		}
+		
+	}
+	if (moving)
+	{
+		SetLocation(Point(X+x-clickLocation.X, Y+y-clickLocation.Y));
 		clickLocation = Point(x, y);
 	}
 	panel->OnMouseMove(button, x, y);
