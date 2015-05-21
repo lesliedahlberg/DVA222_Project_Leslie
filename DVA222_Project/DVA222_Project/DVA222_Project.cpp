@@ -14,6 +14,7 @@
 #include "ImageBox.h"
 #include "CheckBoxGroup.h"
 #include "RadioButtonGroup.h"
+#include "MyButton.h"
 
 using namespace std;
 
@@ -25,11 +26,8 @@ int _tmain(int argc, char** argv)
     //This means after calling the InitOGL function no further lines of code in the main function are executed until we close the Window.
     //------------------------------------------------------------------------------------------------------------------------------------
     
-	Window* window = new Window(100, 100, 600, 600);
-	//window->SetBackground(Color(0, 230, 230));
-
-	//Panel* window = new Panel(0, 0, 600, 600);
-	//window->SetBackground(Color(0, 230, 230));
+	Window* window = new Window(0, 0, 600, 600);
+	
 
 	Panel* panel_1 = new Panel(0, 0, 500, 500);
 	Panel* panel_1b = new Panel(5, 5, 490, 490);
@@ -51,9 +49,6 @@ int _tmain(int argc, char** argv)
 	panel_2->Add(panel_3);
 	panel_2->Add(label_1);
 	panel_1->Add(button_1);
-
-	//panel_1->SetLocation(Point(100, 100));
-	//panel_2->SetLocation(Point(100, 100));
 	
 	CheckBox *check = new CheckBox(0, 0);
 	CheckBox *check2 = new CheckBox(0, 0);
@@ -84,13 +79,17 @@ int _tmain(int argc, char** argv)
 	panel_2->Add(radio);
 	panel_1->Add(group);
 	panel_1->Add(radioGroup);
-	//panel_3->Add(group);
 
 	
-	window->Add(panel_1);
+	MyButton* image = new MyButton(25, 25, 100, 100);
+	
+	panel_3->Add(image);
 
+	window->Add(panel_1);
+	
 	ControlBase* base = window;
 
+	
 	InitOGL(argc, argv, base);
 
 	delete base;

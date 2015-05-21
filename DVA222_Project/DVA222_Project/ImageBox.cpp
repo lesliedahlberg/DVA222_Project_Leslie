@@ -47,6 +47,7 @@ void ImageBox::OnPaint()
 	else
 		DrawBitmap(*normal, 100, 100, 500, 500);
 		**/
+	DrawBitmap(*normal, 0, 0, 100, 100);
 }
 
 //Is called once, when the object is being loaded
@@ -55,9 +56,7 @@ void ImageBox::OnLoaded()
 	//Only 24bit bmp files are supported
 	//Edit your bitmaps in MSPaint also remember that the width of the image MUST be a factor of 4 (be dividable by 4)
 
-	normal = new Bitmap("corgi.bmp");
-	hover = new Bitmap("corgi.bmp");
-	press = new Bitmap("corgi.bmp");
+	normal = new Bitmap("ButtonNorm.bmp");
 
 }
 

@@ -19,7 +19,7 @@ public:
 	~Window();
 	virtual void Add(UIControl* element);
 	virtual void OnPaint();
-	
+	virtual void OnLoaded();
 	virtual void OnKeyboard(unsigned char key, int x, int y);
 	virtual void OnMouseDown(int button, int x, int y);
 	virtual void OnMouseUp(int button, int x, int y);

@@ -25,6 +25,12 @@ void Window::Add(UIControl* element)
 	panel->Add(element);
 }
 
+void Window::OnLoaded()
+{
+	panel->OnLoaded();
+	SetZeroPoint(zeroPoint);
+}
+
 void Window::OnPaint()
 {
 	SetColor(180, 180, 180);

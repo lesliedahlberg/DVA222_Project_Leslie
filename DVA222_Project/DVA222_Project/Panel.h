@@ -25,6 +25,7 @@ public:
 	virtual void Add(UIControl* element);
 	virtual void SetBackground(Color background);
 	
+	virtual void OnLoaded();
 	virtual void OnPaint();
 
 	virtual void OnKeyboard(unsigned char key, int x, int y);

@@ -60,6 +60,16 @@ void Panel::PaintElements()
 	}
 }
 
+void Panel::OnLoaded()
+{
+	int length = controls.size();
+	for (size_t i = 0; i < length; i++)
+	{
+		controls.at(i)->OnLoaded();
+	}
+	SetZeroPoint(zeroPoint);
+}
+
 void Panel::OnPaint()
 {
 	
