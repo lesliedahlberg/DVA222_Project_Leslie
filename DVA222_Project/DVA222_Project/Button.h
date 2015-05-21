@@ -15,7 +15,6 @@ private:
 	Label buttonText;
 	Color background;
 	Color border;
-	int borderThickness;
 	bool hit;
 	bool pressed;
 

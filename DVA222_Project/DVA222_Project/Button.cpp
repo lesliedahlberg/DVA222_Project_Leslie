@@ -11,7 +11,6 @@ Button::Button(int locX, int locY, int width, int height)
 	: UIControl(locX, locY, width, height)
 {
 	hit = pressed = false;
-	borderThickness = 2;
 	background = Color(200, 200, 200);
 	border = Color(0, 0, 0);
 	buttonText.setColor(Color(0, 0, 0));
@@ -20,7 +19,6 @@ Button::Button(int locX, int locY, int width, int height)
 Button::~Button()
 {
 	hit = pressed = false;
-	borderThickness = 2;
 }
 
 void Button::SetButtonText(std::string text)
@@ -37,7 +35,7 @@ void Button::SetSize(int Width, int Height)
 
 void Button::OnMouseMove(int button, int x, int y)
 {
-	if (x>X && x < X + Width && y>Y && y < Y + Height)
+	if (x>X + zeroPoint.X && x < X + zeroPoint.X + Width && y>Y + zeroPoint.Y && y < Y + zeroPoint.Y + Height)
 		hit = true;
 	else
 	{
@@ -48,9 +46,9 @@ void Button::OnMouseMove(int button, int x, int y)
 void Button::Draw()
 {
 	SetColor(background.R, background.G, background.B);
-	FillRectangle(X, Y, Width, Height);
+	FillRectangle(X + zeroPoint.X, Y + zeroPoint.Y, Width, Height);
 	SetColor(border.R, border.G, border.B);
-	DrawRectangle(X, Y, Width, Height);
+	DrawRectangle(X + zeroPoint.X, Y + zeroPoint.Y, Width, Height);
 
 	buttonText.OnPaint();
 }
