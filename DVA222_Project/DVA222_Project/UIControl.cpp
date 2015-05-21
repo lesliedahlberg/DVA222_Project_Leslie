@@ -23,7 +23,7 @@ Point UIControl::GetLocation()
 	return Point(X, Y);
 }
 
-void UIControl::SetZeroPointForControls(Point zeroPoint)
+void UIControl::SetZeroPointForControls()
 {
 	
 }
@@ -32,7 +32,6 @@ void UIControl::SetZeroPoint(Point zeroPoint)
 {
 	this->zeroPoint.X = zeroPoint.X;
 	this->zeroPoint.Y = zeroPoint.Y;
-	SetZeroPointForControls(zeroPoint);
 }
 
 void UIControl::SetLocation(Point location)

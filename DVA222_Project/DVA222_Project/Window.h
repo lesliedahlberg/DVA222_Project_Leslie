@@ -18,6 +18,7 @@ public:
 	Window(int locX, int locY, int width, int height);
 	~Window();
 	virtual void Add(UIControl* element);
+	virtual void SetLocation(Point location);
 	virtual void OnPaint();
 	virtual void OnLoaded();
 	virtual void OnKeyboard(unsigned char key, int x, int y);

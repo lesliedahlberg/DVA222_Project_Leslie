@@ -26,6 +26,7 @@ int _tmain(int argc, char** argv)
     //This means after calling the InitOGL function no further lines of code in the main function are executed until we close the Window.
     //------------------------------------------------------------------------------------------------------------------------------------
     
+	//DEF
 	Window* window = new Window(0, 0, 600, 600);
 	
 	Panel* panel_1 = new Panel(0, 0, 500, 500);
@@ -82,6 +83,7 @@ int _tmain(int argc, char** argv)
 	panel_2->Add(label_1);
 	panel_1->Add(button_1);
 	panel_3->Add(image);
+	
 	
 	radioGroup->Add(radio1);
 	radioGroup->Add(radio2);

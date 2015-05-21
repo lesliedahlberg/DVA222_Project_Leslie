@@ -15,6 +15,6 @@ public:
 	virtual Point GetLocation();
 	virtual void SetLocation(Point location);
 	virtual void SetZeroPoint(Point zeroPoint);
-	virtual void SetZeroPointForControls(Point zeroPoint);
+	virtual void SetZeroPointForControls();
 };
 

@@ -4,7 +4,8 @@
 
 Window::Window()
 {
-	hit = pressed = moving = false;
+	xOff = 0;
+	yOff = 20;
 }
 
 Window::Window(int locX, int locY, int width, int height) : UIControl(locX, locY, width, height)
@@ -12,7 +13,7 @@ Window::Window(int locX, int locY, int width, int height) : UIControl(locX, locY
 	xOff = 0;
 	yOff = 20;
 	panel = new Panel(0, 0, width, height);
-	
+	SetLocation(Point(locX, locY));
 }
 
 Window::~Window()
@@ -25,18 +26,24 @@ void Window::Add(UIControl* element)
 	panel->Add(element);
 }
 
+void Window::SetLocation(Point location)
+{
+	UIControl::SetLocation(location);
+	panel->SetZeroPoint(Point(X + xOff, Y + yOff));
+	panel->SetZeroPointForControls();
+}
+
 void Window::OnLoaded()
 {
 	panel->OnLoaded();
 	SetZeroPoint(zeroPoint);
+	SetLocation(Point(X, Y));
 }
 
 void Window::OnPaint()
 {
 	SetColor(180, 180, 180);
 	FillRectangle(X, Y, Width, yOff);
-	panel->SetZeroPoint(Point(X+xOff, Y+yOff));
-	//panel->SetZeroPoint(Point(0, 0));
 	panel->OnPaint();
 }
 

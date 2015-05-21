@@ -19,8 +19,8 @@ public:
 	virtual void PaintElements();
 
 	virtual void SetLocation(Point location);
-	virtual void SetZeroPoint(Point zeroPoint);
-	virtual void SetZeroPointForControls(Point zeroPoint);
+	
+	virtual void SetZeroPointForControls();
 
 	virtual void Add(UIControl* element);
 	virtual void SetBackground(Color background);

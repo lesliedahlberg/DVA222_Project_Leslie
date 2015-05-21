@@ -48,21 +48,15 @@ void RadioButton::setTextColor(Color color)
 	buttonText.setColor(color);
 }
 
-void RadioButton::SetZeroPoint(Point zeroPoint)
-{
-	UIControl::SetZeroPoint(zeroPoint);
-	SetZeroPointForControls(zeroPoint);
-}
-
-void RadioButton::SetZeroPointForControls(Point zeroPoint)
+void RadioButton::SetZeroPointForControls()
 {
 	buttonText.SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
+	buttonText.SetZeroPointForControls();
 }
 
 
 void RadioButton::OnPaint(void)
 {
-	SetZeroPoint(zeroPoint);
 	SetColor(button.R, button.G, button.B);
 	DrawCircle(X+zeroPoint.X+8, Y+zeroPoint.Y+8, Width / 2);
 	if (fillButton)

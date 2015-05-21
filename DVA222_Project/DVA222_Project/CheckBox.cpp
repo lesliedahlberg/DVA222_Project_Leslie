@@ -64,10 +64,10 @@ void CheckBox::OnMouseMove(int button, int x, int y)
 void CheckBox::SetZeroPoint(Point zeroPoint)
 {
 	UIControl::SetZeroPoint(zeroPoint);
-	SetZeroPointForControls(zeroPoint);
+	SetZeroPointForControls();
 }
 
-void CheckBox::SetZeroPointForControls(Point zeroPoint)
+void CheckBox::SetZeroPointForControls()
 {
 	buttonText.SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
 }
