@@ -31,7 +31,7 @@ void CheckBox::OnPaint(void)
 	DrawRectangle(X+zeroPoint.X, Y+zeroPoint.Y, Width, Height);
 	if (checked)
 	{
-		DrawLine(X+zeroPoint.X + 2, Y+zeroPoint.Y + 10, X + 8, Y + 15);
+		DrawLine(X + zeroPoint.X + 2, Y + zeroPoint.Y + 10, X + zeroPoint.X + 8, Y + zeroPoint.Y + 15);
 	}
 }
 
