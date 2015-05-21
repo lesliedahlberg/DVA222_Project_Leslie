@@ -8,7 +8,7 @@
 
 class Panel : public UIControl
 {
-private:
+protected:
 	Color background;
 	std::vector<UIControl*> controls;
 public:
