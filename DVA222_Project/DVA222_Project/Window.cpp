@@ -33,3 +33,28 @@ void Window::OnPaint()
 	//panel->SetZeroPoint(Point(0, 0));
 	panel->OnPaint();
 }
+
+void Window::OnKeyboard(unsigned char key, int x, int y)
+{
+	panel->OnKeyboard(key, x, y);
+}
+
+void Window::OnMouseUp(int button, int x, int y)
+{
+	panel->OnMouseUp(button, x, y);
+}
+
+void Window::OnMouseDown(int button, int x, int y)
+{
+	panel->OnMouseDown(button, x, y);
+}
+
+void Window::OnMouseMove(int button, int x, int y)
+{
+	panel->OnMouseMove(button, x, y);
+}
+
+void Window::OnResize(int width, int height)
+{
+	panel->OnResize(width, height);
+}

@@ -86,8 +86,6 @@ int _tmain(int argc, char** argv)
 	panel_1->Add(radioGroup);
 	//panel_3->Add(group);
 
-	ImageBox *image = new ImageBox(100, 100, 500, 500);
-	panel_1->Add(image);
 	
 	window->Add(panel_1);
 
