@@ -1,12 +1,12 @@
 #pragma once
-#include "ControlBase.h"
+#include "UIControl.h"
 #include "StdAfx.h"
 #include "Graphix.h"
 #include "glut.h"
 #include <string>
 #include <stdlib.h>
 class Label :
-	public ControlBase
+	public UIControl
 {
 private:
 	std::string text;

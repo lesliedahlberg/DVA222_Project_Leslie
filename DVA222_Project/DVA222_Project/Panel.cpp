@@ -16,6 +16,12 @@ Panel::~Panel()
 {
 }
 
+void Panel::SetLocation(Point location)
+{
+	UIControl::SetLocation(location);
+	SetZeroPointForControls(Point(location.X+zeroPoint.X, location.Y+zeroPoint.Y));
+}
+
 void Panel::SetZeroPoint(Point zeroPoint)
 {
 	UIControl::SetZeroPoint(zeroPoint);
@@ -28,12 +34,14 @@ void Panel::SetZeroPointForControls(Point zeroPoint)
 	for (size_t i = 0; i < length; i++)
 	{
 		controls.at(i)->SetZeroPoint(zeroPoint);
+		Point location = controls.at(i)->GetLocation();
+		controls.at(i)->SetZeroPointForControls(Point(location.X+zeroPoint.X, location.Y+zeroPoint.Y));
 	}
 }
 
 void Panel::Add(UIControl* element)
 {
-	element->SetZeroPoint(Point(X, Y));
+	element->SetZeroPoint(Point(X+zeroPoint.X, Y+zeroPoint.Y));
 	controls.push_back(element);
 	
 }

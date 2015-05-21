@@ -18,8 +18,24 @@ UIControl::~UIControl()
 {
 }
 
+Point UIControl::GetLocation()
+{
+	return Point(X, Y);
+}
+
+void UIControl::SetZeroPointForControls(Point zeroPoint)
+{
+	
+}
+
 void UIControl::SetZeroPoint(Point zeroPoint)
 {
 	this->zeroPoint.X = zeroPoint.X;
 	this->zeroPoint.Y = zeroPoint.Y;
+}
+
+void UIControl::SetLocation(Point location)
+{
+	X = location.X;
+	Y = location.Y;
 }

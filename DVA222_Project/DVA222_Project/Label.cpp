@@ -10,7 +10,7 @@ Label::Label()
 }
 
 Label::Label(int locX, int locY)
-	: ControlBase(locX, locY, 0, 0)
+	: UIControl(locX, locY, 0, 0)
 {
 	
 }
@@ -40,7 +40,7 @@ void Label::OnPaint()
 {
 	//PAINT
 	SetColor(r, g, b);
-	DrawString(text, X, Y);
+	DrawString(text, X+zeroPoint.X, Y+zeroPoint.Y);
 }
 
 void Label::OnLoaded()

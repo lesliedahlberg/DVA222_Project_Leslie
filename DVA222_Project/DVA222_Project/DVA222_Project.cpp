@@ -7,7 +7,6 @@
 #include "glut.h"
 #include "Button.h"
 #include "Label.h"
-#include "Container.h"
 #include "Panel.h"
 
 using namespace std;
@@ -21,26 +20,28 @@ int _tmain(int argc, char** argv)
     //------------------------------------------------------------------------------------------------------------------------------------
     
 	//ControlBase* button = new MyButton(10,10,190,60);
-	Label* label1 = new Label(0, 0);
-	label1->setText("AJ AJ");
-	label1->setColor(256, 256, 256);
+	/*Label* label1 = new Label(0, 0);
+	label1->setText("Label");
+	label1->setColor(256, 256, 0);
 
 	Button* button = new Button(0, 0, 200, 50);
-	button->SetButtonText("Click Here!");
+	button->SetButtonText("Click Here!");*/
 
-	Panel* smallPanel = new Panel(0, 0, 100, 100);
-	smallPanel->SetBackground(Color(256, 0, 0));
+	Panel* panel_1 = new Panel(100, 100, 500, 500);
+	Panel* panel_2 = new Panel(100, 100, 300, 300);
+	Panel* panel_3 = new Panel(100, 100, 100, 100);
 
-	Panel* smallPanel2 = new Panel(10, 10, 50, 50);
-	smallPanel2->SetBackground(Color(0, 0, 256));
+	panel_1->SetBackground(Color(200, 0, 0));
+	panel_2->SetBackground(Color(0, 200, 0));
+	panel_3->SetBackground(Color(0, 0, 200));
 
-	smallPanel->Add(smallPanel2);
+	panel_1->Add(panel_2);
+	panel_2->Add(panel_3);
 
-	Panel* panel = new Panel(100, 100, 200, 200);
-	panel->Add(smallPanel);
-	panel->SetBackground(Color(0, 256, 0));
+	panel_1->SetLocation(Point(10, 10));
+	panel_2->SetLocation(Point(10, 10));
 
-	ControlBase* base = panel;
+	ControlBase* base = panel_1;
 	InitOGL(argc, argv, base);
 
     delete base;
