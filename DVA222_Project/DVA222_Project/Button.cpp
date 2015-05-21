@@ -8,14 +8,13 @@ Button::Button()
 }
 
 Button::Button(int locX, int locY, int width, int height)
-	: ControlBase(locX, locY, width, height)
+	: UIControl(locX, locY, width, height)
 {
 	hit = pressed = false;
 	borderThickness = 2;
 	background = Color(200, 200, 200);
 	border = Color(0, 0, 0);
 	buttonText.setColor(Color(0, 0, 0));
-	SetLocation(X, Y);
 }
 
 Button::~Button()
@@ -29,12 +28,6 @@ void Button::SetButtonText(std::string text)
 	buttonText.setText(text);
 }
 
-void Button::SetLocation(int locX, int locY)
-{
-	X = locX;
-	Y = locY;
-	buttonText.SetLocation(locX + borderThickness * 4, locY + borderThickness * 4 + 10);
-}
 
 void Button::SetSize(int Width, int Height)
 {

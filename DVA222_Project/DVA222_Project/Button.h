@@ -1,5 +1,5 @@
 #pragma once
-#include "ControlBase.h"
+#include "UIControl.h
 #include "StdAfx.h"
 #include "Graphix.h"
 #include "glut.h"
@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 class Button :
-	public ControlBase
+	public UIControl
 {
 private:
 	Label buttonText;
@@ -27,7 +27,6 @@ public:
 	~Button();
 
 	virtual void SetButtonText(std::string text);
-	virtual void SetLocation(int locX, int locY);
 	virtual void SetSize(int Width, int Height);
 	
 	//The class is overriding the following Event Handlers inherited from the base class 
