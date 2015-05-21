@@ -10,6 +10,8 @@ class Window : public UIControl
 {
 protected:
 	int xOff, yOff;
+	bool hit, pressed, moving;
+	Point clickLocation;
 	Panel* panel;
 public:
 	Window();

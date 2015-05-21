@@ -4,7 +4,7 @@
 
 Window::Window()
 {
-
+	hit = pressed = moving = false;
 }
 
 Window::Window(int locX, int locY, int width, int height) : UIControl(locX, locY, width, height)
@@ -41,16 +41,37 @@ void Window::OnKeyboard(unsigned char key, int x, int y)
 
 void Window::OnMouseUp(int button, int x, int y)
 {
+	/*if (moving)
+	{
+		
+		SetLocation(Point(X - (clickLocation.X - x), Y - clickLocation.Y + y));
+	}*/
+	pressed = moving = false;
 	panel->OnMouseUp(button, x, y);
 }
 
 void Window::OnMouseDown(int button, int x, int y)
 {
+	if (hit)
+	{
+		pressed = true;
+	}
 	panel->OnMouseDown(button, x, y);
 }
 
 void Window::OnMouseMove(int button, int x, int y)
 {
+	if (x>X && x < X + Width && y>Y && y < Y + yOff)
+		hit = true;
+	else
+	{
+		pressed = hit = false;
+	}
+	if (pressed)
+	{
+		moving = true;
+		clickLocation = Point(x, y);
+	}
 	panel->OnMouseMove(button, x, y);
 }
 
