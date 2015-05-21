@@ -11,6 +11,7 @@ class Window : public UIControl
 protected:
 	int xOff, yOff;
 	bool hit, pressed, moving;
+	Color background;
 	Point clickLocation;
 	Panel* panel;
 public:
@@ -19,6 +20,7 @@ public:
 	~Window();
 	virtual void Add(UIControl* element);
 	virtual void SetLocation(Point location);
+	virtual void SetBackground(Color colro);
 	virtual void OnPaint();
 	virtual void OnLoaded();
 	virtual void OnKeyboard(unsigned char key, int x, int y);

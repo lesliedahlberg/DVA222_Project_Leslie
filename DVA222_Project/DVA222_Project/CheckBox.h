@@ -18,13 +18,12 @@ public:
 	CheckBox(int x, int y);
 	~CheckBox();
 
-	
+	virtual void SetLocation(Point location);
 	virtual void OnPaint(void);
 	virtual void OnMouseDown(int button, int x, int y);
 	virtual void OnMouseUp(int button, int x, int y);
 	virtual void OnMouseMove(int button, int x, int y);
 
-	void SetZeroPoint(Point zeroPoint);
 	void SetZeroPointForControls();
 
 	virtual void setText(std::string);

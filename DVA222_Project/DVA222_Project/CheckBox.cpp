@@ -20,6 +20,11 @@ CheckBox::~CheckBox()
 {
 }
 
+void CheckBox::SetLocation(Point location)
+{
+	UIControl::SetLocation(location);
+	SetZeroPointForControls();
+}
 
 
 void CheckBox::OnPaint(void)
@@ -61,15 +66,10 @@ void CheckBox::OnMouseMove(int button, int x, int y)
 	}
 }
 
-void CheckBox::SetZeroPoint(Point zeroPoint)
-{
-	UIControl::SetZeroPoint(zeroPoint);
-	SetZeroPointForControls();
-}
-
 void CheckBox::SetZeroPointForControls()
 {
 	buttonText.SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
+	buttonText.SetZeroPointForControls();
 }
 
 void CheckBox::setText(std::string text)

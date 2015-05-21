@@ -24,6 +24,7 @@ public:
 	RadioButton(int x, int y, RadioButtonGroup* group);
 	~RadioButton();
 	
+	virtual void SetLocation(Point location);
 	virtual void OnLoaded();
 	virtual void OnPaint(void);
 	virtual void OnMouseDown(int button, int x, int y);

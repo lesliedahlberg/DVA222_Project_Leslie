@@ -19,9 +19,15 @@ Label::~Label()
 {
 }
 
+void Label::SetZeroPointForControls()
+{
+
+}
+
 void Label::SetLocation(Point location)
 {
 	UIControl::SetLocation(Point(location.Y, location.X));
+
 }
 
 //Set, Get

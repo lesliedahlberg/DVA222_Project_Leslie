@@ -22,6 +22,14 @@ Window::~Window()
 
 }
 
+
+
+void Window::SetBackground(Color color)
+{
+	this->background = color;
+	panel->SetBackground(background);
+}
+
 void Window::Add(UIControl* element)
 {
 	panel->Add(element);

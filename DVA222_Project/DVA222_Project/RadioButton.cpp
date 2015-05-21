@@ -48,10 +48,15 @@ void RadioButton::setTextColor(Color color)
 	buttonText.setColor(color);
 }
 
+void RadioButton::SetLocation(Point location)
+{
+	UIControl::SetLocation(location);
+	SetZeroPointForControls();
+}
+
 void RadioButton::SetZeroPointForControls()
 {
 	buttonText.SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
-	buttonText.SetZeroPointForControls();
 }
 
 

@@ -31,7 +31,7 @@ void ElementGroup::PaintElements()
 	int length = controls.size();
 	for (size_t i = 0; i < length; i++)
 	{
-		controls.at(i)->SetLocation(Point(15, 25 * (i + 1)));
+		controls.at(i)->SetLocation(Point(10, 20 * i+10));
 		controls.at(i)->OnPaint();
 	}
 }

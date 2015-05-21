@@ -26,81 +26,89 @@ int _tmain(int argc, char** argv)
     //This means after calling the InitOGL function no further lines of code in the main function are executed until we close the Window.
     //------------------------------------------------------------------------------------------------------------------------------------
     
-	//DEF
-	Window* window = new Window(0, 0, 600, 600);
+	Window* window_1 = new Window(20, 20, 550, 450);
+	window_1->SetBackground(Color(235, 235, 235));
+
+	Label* label_top = new Label(20, 20);
+	label_top->setText("I am Label. Actually all the text you see inside those 2 panels ...");
+	label_top->setColor(Color(50, 50, 50));
+
+	CheckBoxGroup* checkBoxGroup_1 = new CheckBoxGroup(10, 50, 250, 150);
+	checkBoxGroup_1->SetBackground(Color(210, 210, 210));
+	CheckBox* checkBox_1 = new CheckBox(0, 0);
+	CheckBox* checkBox_2 = new CheckBox(0, 20);
+	CheckBox* checkBox_3 = new CheckBox(0, 40);
+	CheckBox* checkBox_4 = new CheckBox(0, 60);
+	checkBox_1->setText("I am a CheckBox");
+	checkBox_2->setText("I am another CheckBox");
+	checkBox_3->setText("I am a selected CheckBox");
+	checkBox_4->setText("I am another selected CheckBox");
+	checkBox_3->setStatus(true);
+	checkBox_4->setStatus(true);
+	checkBoxGroup_1->Add(checkBox_1);
+	checkBoxGroup_1->Add(checkBox_2);
+	checkBoxGroup_1->Add(checkBox_3);
+	checkBoxGroup_1->Add(checkBox_4);
+
+	RadioButtonGroup* radioButtonGroup_1 = new RadioButtonGroup(10 + 250 + 20, 50, 250, 150);
+	radioButtonGroup_1->SetBackground(Color(210, 210, 210));
+	RadioButton* radioButton_1 = new RadioButton(0, 0, radioButtonGroup_1);
+	RadioButton* radioButton_2 = new RadioButton(0, 20, radioButtonGroup_1);
+	RadioButton* radioButton_3 = new RadioButton(0, 40, radioButtonGroup_1);
+	RadioButton* radioButton_4 = new RadioButton(0, 60, radioButtonGroup_1);
+	radioButton_1->setText("I am a RadioButton");
+	radioButton_2->setText("I am another RadioButton");
+	radioButton_3->setText("I am THE selected RadioButton. The Only.");
+	radioButton_4->setText("I am just another RadioButton");
+	radioButton_3->setStatus(true);
+	radioButtonGroup_1->Add(radioButton_1);
+	radioButtonGroup_1->Add(radioButton_2);
+	radioButtonGroup_1->Add(radioButton_3);
+	radioButtonGroup_1->Add(radioButton_4);
+
+	RadioButton* freeRadioButton_1 = new RadioButton(20, 50 + 150 + 20);
+	freeRadioButton_1->setText("I am a free RadioButton");
+
+	CheckBox* freeCheckBox_1 = new CheckBox(20, 50 + 150 + 20 + 20);
+	freeCheckBox_1->setText("And I am a free CheckBox");
+
+	MyButton* image_1 = new MyButton(20, 50 + 150 + 20 + 20 + 40, 100, 100);
 	
-	Panel* panel_1 = new Panel(0, 0, 500, 500);
-	Panel* panel_1b = new Panel(5, 5, 490, 490);
-	Panel* panel_2 = new Panel(100, 100, 300, 300);
-	Panel* panel_3 = new Panel(100, 100, 100, 100);
+	Panel* panel_1 = new Panel(10 + 250 + 20, 50 + 150 + 20, 250, 150);
+	panel_1->SetBackground(Color(250, 120, 120));
 
-	Label* label_1 = new Label(20, 0);
+	Label* label_panel_1 = new Label(20, 20);
+	label_panel_1->setText("I am a panel.");
+	label_panel_1->setColor(Color(50, 50, 50));
 
-	Button* button_1 = new Button(0, 0, 100, 30);
+	panel_1->Add(label_panel_1);
 
-	CheckBoxGroup *group = new CheckBoxGroup(40, 150, 200, 200);
+	Panel* panel_2 = new Panel(10 + 250 + 20 - 100, 50 + 150 + 20 + 50, 250, 150);
+	panel_2->SetBackground(Color(120, 250, 120));
 
-	CheckBox *check = new CheckBox(0, 0);
-	CheckBox *check2 = new CheckBox(0, 0);
-	CheckBox *check3 = new CheckBox(0, 0);
+	Label* label_panel_2 = new Label(20, 20);
+	label_panel_2->setText("I am also a panel.");
+	label_panel_2->setColor(Color(50, 50, 50));
 
-	RadioButtonGroup *radioGroup = new RadioButtonGroup(350, 350, 150, 150);
+	panel_2->Add(label_panel_2);
 
-	RadioButton * radio = new RadioButton(0, 0);
-	RadioButton *radio1 = new RadioButton(0, 0, radioGroup);
-	RadioButton *radio2 = new RadioButton(0, 0, radioGroup);
-	RadioButton *radio3 = new RadioButton(0, 0, radioGroup);
+	Button* button = new Button(20, 40, 75, 20);
+	button->SetButtonText("Button");
 
-	MyButton* image = new MyButton(25, 25, 100, 100);
-
-	//PREFS
-	panel_1->SetBackground(Color(200, 0, 0));
-	panel_1b->SetBackground(Color(200, 50, 0));
-	panel_2->SetBackground(Color(0, 200, 0));
-	panel_3->SetBackground(Color(0, 0, 200));
-
-	label_1->setText("LABEL_1");
-	label_1->setColor(Color(256, 256, 256));
-
-	button_1->SetButtonText("BUTTON");
-
-	radio->setColor(Color(256, 256, 256));
-	radio->setTextColor(Color(256, 256, 256));
-	radio->setText("Radio");
-	check->setText("Check");
-	check2->setText("Check2");
-
-	radioGroup->SetBackground(Color(150, 150, 150));
-	radioGroup->SetBorderColor(Color(0, 0, 0));
-	radio1->setText("Radio");
-
-	group->SetBackground(Color(256, 256, 256));
-
-	//ADD
-	
-	panel_1->Add(panel_1b);
-	panel_1b->Add(panel_2);
-	panel_2->Add(panel_3);
-	panel_2->Add(label_1);
-	panel_1->Add(button_1);
-	panel_3->Add(image);
+	panel_2->Add(button);
 	
 	
-	radioGroup->Add(radio1);
-	radioGroup->Add(radio2);
-	radioGroup->Add(radio3);
-	
-	group->Add(check);
-	group->Add(check2);
-	group->Add(check3);
 
-	panel_2->Add(radio);
-	panel_1->Add(group);
-	panel_1->Add(radioGroup);
-
-	window->Add(panel_1);
+	window_1->Add(label_top);
+	window_1->Add(checkBoxGroup_1);
+	window_1->Add(radioButtonGroup_1);
+	window_1->Add(freeRadioButton_1);
+	window_1->Add(freeCheckBox_1);
+	window_1->Add(image_1);
+	window_1->Add(panel_1);
+	window_1->Add(panel_2);
 	
-	ControlBase* base = window;
+	ControlBase* base = window_1;
 
 	InitOGL(argc, argv, base);
 
