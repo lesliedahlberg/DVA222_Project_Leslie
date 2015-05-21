@@ -2,6 +2,7 @@
 #include "ControlBase.h"
 #include "Label.h"
 #include "Header.h"
+#include "RadioButtonGroup.h"
 class RadioButton :
 	public UIControl
 {
@@ -13,11 +14,14 @@ private:
 	Color button;
 	Color textColor;
 	Label buttonText;
+	RadioButtonGroup *parent;
+	bool inGroup;
 
 public:
 
 	RadioButton();
 	RadioButton(int x, int y);
+	RadioButton(int x, int y, RadioButtonGroup* group);
 	~RadioButton();
 	
 	virtual void OnLoaded();

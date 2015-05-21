@@ -12,9 +12,17 @@ RadioButton::RadioButton(int x, int y)
 : UIControl(x, y, 16, 16)
 {
 	hit = fillButton = false;
-
-	
 	buttonText.SetLocation(Point(0, 16));
+	inGroup = false;
+}
+
+RadioButton::RadioButton(int x, int y, RadioButtonGroup* group)
+: UIControl(x, y, 16, 16)
+{
+	hit = fillButton = false;
+	buttonText.SetLocation(Point(0, 16));
+	parent = group;
+	inGroup = true;
 }
 
 RadioButton::~RadioButton()
@@ -74,6 +82,10 @@ void RadioButton::OnMouseDown(int button, int x, int y)
 {
 	if (hit && button == MOUSE_LEFT)
 	{
+		if (inGroup)
+		{
+			parent->Reset();
+		}
 		fillButton = true;
 	}
 }

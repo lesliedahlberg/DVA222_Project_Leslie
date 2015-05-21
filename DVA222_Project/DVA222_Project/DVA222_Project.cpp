@@ -58,9 +58,10 @@ int _tmain(int argc, char** argv)
 	CheckBox *check = new CheckBox(0, 0);
 	CheckBox *check2 = new CheckBox(0, 0);
 	CheckBox *check3 = new CheckBox(0, 0);
-	RadioButton *radio1 = new RadioButton(0, 0);
-	RadioButton *radio2 = new RadioButton(0, 0);
-	RadioButton *radio3 = new RadioButton(0, 0);
+	RadioButtonGroup *radioGroup = new RadioButtonGroup(150, 150, 150, 150);
+	RadioButton *radio1 = new RadioButton(0, 0, radioGroup);
+	RadioButton *radio2 = new RadioButton(0, 0, radioGroup);
+	RadioButton *radio3 = new RadioButton(0, 0, radioGroup);
 	
 	RadioButton * radio = new RadioButton(0, 0);
 	radio->setColor(Color(256, 256, 256));
@@ -69,7 +70,6 @@ int _tmain(int argc, char** argv)
 	check->setText("Check");
 	check2->setText("Check2");
 	CheckBoxGroup *group = new CheckBoxGroup(40, 40, 200, 200);
-	RadioButtonGroup *radioGroup = new RadioButtonGroup(150, 150, 150, 150);
 	radioGroup->SetBackground(Color(150, 150, 150));
 	radioGroup->SetBorderColor(Color(0,0,0));
 	radio1->setText("Radio");
