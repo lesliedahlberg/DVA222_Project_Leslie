@@ -11,6 +11,7 @@
 #include "RadioButton.h"
 #include "CheckBox.h"
 #include "Window.h"
+#include "ImageBox.h"
 #include "CheckBoxGroup.h"
 
 using namespace std;
@@ -64,6 +65,8 @@ int _tmain(int argc, char** argv)
 	panel_2->Add(radio);
 	panel_1->Add(check);
 
+	ImageBox *image = new ImageBox(100, 100, 500, 500);
+	panel_1->Add(image);
 	
 	window->Add(panel_1);
 	window->SetZeroPoint(Point(10, 10));
