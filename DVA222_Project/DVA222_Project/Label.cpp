@@ -35,7 +35,7 @@ void Label::OnPaint()
 {
 	//PAINT
 	SetColor(color.R, color.B, color.G);
-	DrawString(text, X+zeroPoint.X, Y+zeroPoint.Y+12);
+	DrawString(text, X+zeroPoint.X, Y+zeroPoint.Y);
 }
 
 void Label::OnLoaded()

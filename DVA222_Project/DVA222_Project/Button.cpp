@@ -14,7 +14,7 @@ Button::Button(int locX, int locY, int width, int height)
 	background = Color(200, 200, 200);
 	border = Color(0, 0, 0);
 	buttonText.setColor(Color(0, 0, 0));
-	buttonText.SetLocation(Point(10, 10));
+	buttonText.SetLocation(Point(10,0));
 }
 
 Button::~Button()

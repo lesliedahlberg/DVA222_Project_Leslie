@@ -26,20 +26,23 @@ int _tmain(int argc, char** argv)
 	Panel* panel_2 = new Panel(100, 100, 300, 300);
 	Panel* panel_3 = new Panel(100, 100, 100, 100);
 	Label* label_1 = new Label(0, 0);
+	Button* button_1 = new Button(0, 0, 100, 30);
 
 	panel_1->SetBackground(Color(200, 0, 0));
 	panel_2->SetBackground(Color(0, 200, 0));
 	panel_3->SetBackground(Color(0, 0, 200));
 	label_1->setText("LABEL_1");
 	label_1->setColor(Color(256, 256, 256));
+	button_1->SetButtonText("BUTTON");
 
 	panel_1->Add(panel_2);
 	panel_2->Add(panel_3);
 	panel_2->Add(label_1);
+	panel_3->Add(button_1);
 
 	panel_1->SetLocation(Point(10, 10));
 	panel_2->SetLocation(Point(100, 100));
-
+	
 	CheckBox *check = new CheckBox(10, 10);
 	panel_2->Add(check);
 
