@@ -67,7 +67,7 @@ void Panel::OnLoaded()
 	{
 		controls.at(i)->OnLoaded();
 	}
-	SetZeroPoint(zeroPoint);
+	//SetZeroPoint(zeroPoint);
 }
 
 void Panel::OnPaint()

@@ -43,5 +43,5 @@ void UIControl::SetLocation(Point location)
 
 void UIControl::OnLoaded()
 {
-	SetZeroPoint(zeroPoint);
+	//SetZeroPoint(zeroPoint);
 }
