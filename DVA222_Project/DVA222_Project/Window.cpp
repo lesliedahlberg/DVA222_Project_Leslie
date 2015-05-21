@@ -12,6 +12,7 @@ Window::Window(int locX, int locY, int width, int height) : UIControl(locX, locY
 {
 	xOff = 0;
 	yOff = 20;
+	pressed = hit = moving = false;
 	panel = new Panel(0, 0, width, height);
 	SetLocation(Point(locX, locY));
 }
@@ -36,7 +37,6 @@ void Window::SetLocation(Point location)
 void Window::OnLoaded()
 {
 	panel->OnLoaded();
-	SetZeroPoint(zeroPoint);
 	SetLocation(Point(X, Y));
 }
 
@@ -56,7 +56,6 @@ void Window::OnMouseUp(int button, int x, int y)
 {
 	if (moving)
 	{
-		
 		SetLocation(Point(X - (clickLocation.X - x), Y - clickLocation.Y + y));
 	}
 	pressed = moving = false;
@@ -84,7 +83,6 @@ void Window::OnMouseMove(int button, int x, int y)
 	{
 		moving = true;
 		clickLocation = Point(x, y);
-		//SetLocation(Point())
 	}
 	panel->OnMouseMove(button, x, y);
 }

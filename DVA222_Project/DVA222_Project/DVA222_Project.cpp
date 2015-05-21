@@ -34,7 +34,7 @@ int _tmain(int argc, char** argv)
 	Panel* panel_2 = new Panel(100, 100, 300, 300);
 	Panel* panel_3 = new Panel(100, 100, 100, 100);
 
-	Label* label_1 = new Label(0, 0);
+	Label* label_1 = new Label(20, 0);
 
 	Button* button_1 = new Button(0, 0, 100, 30);
 
@@ -77,6 +77,7 @@ int _tmain(int argc, char** argv)
 	group->SetBackground(Color(256, 256, 256));
 
 	//ADD
+	
 	panel_1->Add(panel_1b);
 	panel_1b->Add(panel_2);
 	panel_2->Add(panel_3);
