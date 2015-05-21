@@ -43,11 +43,7 @@ int _tmain(int argc, char** argv)
 	panel_1->SetLocation(Point(100, 100));
 	panel_2->SetLocation(Point(100, 100));
 	
-<<<<<<< HEAD
 	CheckBox *check = new CheckBox(50, 50);
-=======
-	CheckBox *check = new CheckBox(10, 10);
->>>>>>> origin/master
 	
 	RadioButton * radio = new RadioButton(0, 0);
 	radio->setColor(Color(256, 256, 256));
