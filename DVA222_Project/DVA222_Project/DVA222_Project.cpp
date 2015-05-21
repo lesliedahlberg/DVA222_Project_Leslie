@@ -25,8 +25,8 @@ int _tmain(int argc, char** argv)
 	//Window* window = new Window(10, 10, 600, 600);
 	//window->SetBackground(Color(230, 230, 230));
 
-	//Panel* window = new Panel(10, 10, 600, 600);
-	//window->SetBackground(Color(230, 230, 230));
+	Panel* window = new Panel(10, 10, 600, 600);
+	window->SetBackground(Color(230, 230, 230));
 
 	Panel* panel_1 = new Panel(100, 100, 500, 500);
 	Panel* panel_1b = new Panel(5, 5, 490, 490);
@@ -64,9 +64,10 @@ int _tmain(int argc, char** argv)
 	panel_1->Add(check);
 
 	
-	//window->Add(panel_1);
+	window->Add(panel_1);
+	window->SetZeroPoint(Point(10, 10));
 
-	ControlBase* base = panel_1;
+	ControlBase* base = window;
 	
 	InitOGL(argc, argv, base);
 
