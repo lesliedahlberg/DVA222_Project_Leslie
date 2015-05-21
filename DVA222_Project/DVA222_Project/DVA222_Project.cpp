@@ -10,7 +10,11 @@
 #include "Panel.h"
 #include "RadioButton.h"
 #include "CheckBox.h"
+<<<<<<< Updated upstream
 #include "Window.h"
+=======
+#include "CheckBoxGroup.h"
+>>>>>>> Stashed changes
 
 using namespace std;
 
@@ -60,14 +64,19 @@ int _tmain(int argc, char** argv)
 	radio->setText("Radio");
 	check->setText("Check");
 
+<<<<<<< Updated upstream
 	panel_2->Add(radio);
 	panel_1->Add(check);
 
 	
 	//window->Add(panel_1);
 
+=======
+	panel_1->Add(radio);
+	panel_2->Add(check);
+>>>>>>> Stashed changes
 	ControlBase* base = panel_1;
-	
+
 	InitOGL(argc, argv, base);
 
 	delete base;
