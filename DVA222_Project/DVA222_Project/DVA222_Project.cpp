@@ -44,6 +44,9 @@ int _tmain(int argc, char** argv)
 	panel_2->SetLocation(Point(100, 100));
 	
 	CheckBox *check = new CheckBox(10, 10);
+	RadioButton * radio = new RadioButton(50, 50);
+	radio->setText("Radio");
+	panel_2->Add(radio);
 	panel_2->Add(check);
 
 	ControlBase* base = panel_1;
