@@ -29,7 +29,6 @@ public:
 	virtual void setText(std::string text);
 	virtual void setTextColor(Color color);
 	virtual void setColor(Color color);
-	virtual void setPosition(int locX, int locY);
 	virtual void setStatus(bool checked);
 	virtual bool getStatus();
 	

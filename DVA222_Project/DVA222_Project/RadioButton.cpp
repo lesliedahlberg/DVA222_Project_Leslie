@@ -38,11 +38,6 @@ void RadioButton::setTextColor(Color color)
 	buttonText.setColor(color);
 }
 
-void RadioButton::setPosition(int locX, int locY)
-{
-	X = locX;
-	Y = locY;
-}
 
 void RadioButton::OnPaint(void)
 {

@@ -32,6 +32,7 @@ void CheckBox::OnPaint(void)
 	if (checked)
 	{
 		DrawLine(X + zeroPoint.X + 2, Y + zeroPoint.Y + 10, X + zeroPoint.X + 8, Y + zeroPoint.Y + 15);
+		DrawLine(X + zeroPoint.X + 8, Y + zeroPoint.Y + 15, X + zeroPoint.X + 14, Y + zeroPoint.Y + 5);
 	}
 }
 
@@ -78,12 +79,6 @@ void CheckBox::setColor(int r, int g, int b)
 	buttonColor.R = r;
 	buttonColor.G = g;
 	buttonColor.B = b;
-}
-
-void CheckBox::setPosition(int locX, int locY)
-{
-	X = locX;
-	Y = locY;
 }
 
 void CheckBox::setStatus(bool checked)
