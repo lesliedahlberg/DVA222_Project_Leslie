@@ -4,13 +4,13 @@
 
 UIControl::UIControl()
 {
+	zeroPoint = Point(0, 0);
 }
 
 UIControl::UIControl(int locX, int locY, int width, int height)
 	: ControlBase(locX, locY, width, height)
 {
-	zeroPoint.X = 0;
-	zeroPoint.Y = 0;
+	zeroPoint = Point(0, 0);
 }
 
 
