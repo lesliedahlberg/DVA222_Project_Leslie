@@ -14,7 +14,7 @@ RadioButton::RadioButton(int x, int y)
 	hit = fillButton = false;
 
 	
-	buttonText.SetLocation(Point(8+5, 16+5));
+	buttonText.SetLocation(Point(0, 16));
 }
 
 RadioButton::~RadioButton()

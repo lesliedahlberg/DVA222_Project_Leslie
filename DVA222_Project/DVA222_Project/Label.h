@@ -23,6 +23,7 @@ public:
 	//Set, Get
 	virtual void setText(std::string text);
 	virtual void setColor(Color color);
+	virtual void SetLocation(Point location);
 
 	//The class is overriding the following Event Handlers inherited from the base class 
 	virtual void OnPaint();

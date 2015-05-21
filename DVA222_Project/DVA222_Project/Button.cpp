@@ -14,7 +14,8 @@ Button::Button(int locX, int locY, int width, int height)
 	background = Color(200, 200, 200);
 	border = Color(0, 0, 0);
 	buttonText.setColor(Color(0, 0, 0));
-	buttonText.SetLocation(Point(10+Height/2-5, 10));
+	buttonText.SetLocation(Point(0, 0));
+	
 }
 
 Button::~Button()
@@ -31,6 +32,7 @@ void Button::SetZeroPoint(Point zeroPoint)
 void Button::SetZeroPointForControls(Point zeroPoint)
 {
 	buttonText.SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
+	
 }
 
 void Button::SetButtonText(std::string text)

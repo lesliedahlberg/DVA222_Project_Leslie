@@ -11,7 +11,7 @@ CheckBox::CheckBox(int x, int y)
 	:UIControl(x, y, 16, 16)
 {
 	hit = checked = false;
-	buttonText.SetLocation(Point(13, 20));
+	buttonText.SetLocation(Point(0, 16));
 }
 
 CheckBox::~CheckBox()

@@ -24,13 +24,13 @@ int _tmain(int argc, char** argv)
     //This means after calling the InitOGL function no further lines of code in the main function are executed until we close the Window.
     //------------------------------------------------------------------------------------------------------------------------------------
     
-	//Window* window = new Window(10, 10, 600, 600);
-	//window->SetBackground(Color(230, 230, 230));
+	Window* window = new Window(100, 100, 600, 600);
+	//window->SetBackground(Color(0, 230, 230));
 
-	Panel* window = new Panel(10, 10, 600, 600);
-	window->SetBackground(Color(230, 230, 230));
+	//Panel* window = new Panel(0, 0, 600, 600);
+	//window->SetBackground(Color(0, 230, 230));
 
-	Panel* panel_1 = new Panel(100, 100, 500, 500);
+	Panel* panel_1 = new Panel(0, 0, 500, 500);
 	Panel* panel_1b = new Panel(5, 5, 490, 490);
 	Panel* panel_2 = new Panel(100, 100, 300, 300);
 	Panel* panel_3 = new Panel(100, 100, 100, 100);
