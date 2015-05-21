@@ -19,20 +19,6 @@ Label::~Label()
 {
 }
 
-void UIControl::SetZeroPointForControls(Point zeroPoint)
-{
-	
-}
-
-void UIControl::SetZeroPoint(Point zeroPoint)
-{
-	UIControl::SetZeroPoint(zeroPoint);
-}
-
-void UIControl::SetLocation(Point location)
-{
-	UIControl::SetLocation(location);
-}
 
 //Set, Get
 void Label::setText(std::string text)

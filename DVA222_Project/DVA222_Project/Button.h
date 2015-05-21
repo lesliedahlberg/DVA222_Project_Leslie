@@ -1,5 +1,5 @@
 #pragma once
-#include "UIControl.h
+#include "UIControl.h"
 #include "StdAfx.h"
 #include "Graphix.h"
 #include "glut.h"

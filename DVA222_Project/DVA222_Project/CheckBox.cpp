@@ -11,7 +11,7 @@ CheckBox::CheckBox(int x, int y)
 	:ControlBase(x, y, 16, 16)
 {
 	hit = checked = false;
-	buttonText.setColor(0, 0, 0);
+	buttonText.setColor(Color(0, 0, 0));
 }
 
 CheckBox::~CheckBox()
