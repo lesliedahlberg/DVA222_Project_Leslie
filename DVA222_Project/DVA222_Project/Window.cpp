@@ -14,6 +14,8 @@ Window::Window(int locX, int locY, int width, int height) : UIControl(locX, locY
 	yOff = 20;
 	pressed = hit = moving = false;
 	panel = new Panel(0, 0, width, height);
+	title = new Label(0, 0);
+	title->setColor(Color(50, 50, 50));
 	SetLocation(Point(locX, locY));
 }
 
@@ -22,7 +24,10 @@ Window::~Window()
 
 }
 
-
+void Window::setTitle(std::string text)
+{
+	title->setText(text);
+}
 
 void Window::SetBackground(Color color)
 {
@@ -40,6 +45,8 @@ void Window::SetLocation(Point location)
 	UIControl::SetLocation(location);
 	panel->SetZeroPoint(Point(X + xOff, Y + yOff));
 	panel->SetZeroPointForControls();
+	title->SetZeroPoint(Point(X+5, Y+5));
+	title->SetZeroPointForControls();
 }
 
 void Window::OnLoaded()
@@ -52,6 +59,7 @@ void Window::OnPaint()
 {
 	SetColor(180, 180, 180);
 	FillRectangle(X, Y, Width, yOff);
+	title->OnPaint();
 	panel->OnPaint();
 }
 

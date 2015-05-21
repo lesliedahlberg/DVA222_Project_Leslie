@@ -28,6 +28,7 @@ int _tmain(int argc, char** argv)
     
 	Window* window_1 = new Window(20, 20, 550, 450);
 	window_1->SetBackground(Color(235, 235, 235));
+	window_1->setTitle("I am the window!");
 
 	Label* label_top = new Label(20, 20);
 	label_top->setText("I am Label. Actually all the text you see inside those 2 panels ...");

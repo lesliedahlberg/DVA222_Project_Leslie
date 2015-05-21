@@ -14,10 +14,12 @@ protected:
 	Color background;
 	Point clickLocation;
 	Panel* panel;
+	Label* title;
 public:
 	Window();
 	Window(int locX, int locY, int width, int height);
 	~Window();
+	virtual void setTitle(std::string text);
 	virtual void Add(UIControl* element);
 	virtual void SetLocation(Point location);
 	virtual void SetBackground(Color colro);
