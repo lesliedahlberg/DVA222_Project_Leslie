@@ -54,7 +54,7 @@ void RadioButton::SetZeroPointForControls(Point zeroPoint)
 
 void RadioButton::OnPaint(void)
 {
-	
+	SetZeroPoint(zeroPoint);
 	SetColor(button.R, button.G, button.B);
 	DrawCircle(X+zeroPoint.X+8, Y+zeroPoint.Y+8, Width / 2);
 	if (fillButton)

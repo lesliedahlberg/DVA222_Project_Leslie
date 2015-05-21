@@ -18,14 +18,11 @@ CheckBox::~CheckBox()
 {
 }
 
-void CheckBox::OnLoaded()
-{
-	
-}
+
 
 void CheckBox::OnPaint(void)
 {
-	
+	SetZeroPoint(zeroPoint);
 	SetColor(buttonColor.R, buttonColor.G, buttonColor.B);
 	DrawRectangle(X+zeroPoint.X, Y+zeroPoint.Y, Width, Height);
 	if (checked)
@@ -33,7 +30,6 @@ void CheckBox::OnPaint(void)
 		DrawLine(X + zeroPoint.X + 2, Y + zeroPoint.Y + 10, X + zeroPoint.X + 8, Y + zeroPoint.Y + 15);
 		DrawLine(X + zeroPoint.X + 8, Y + zeroPoint.Y + 15, X + zeroPoint.X + 14, Y + zeroPoint.Y + 5);
 	}
-
 	buttonText.OnPaint();
 }
 
