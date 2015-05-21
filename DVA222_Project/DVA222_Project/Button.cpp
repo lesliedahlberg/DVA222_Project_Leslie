@@ -14,11 +14,17 @@ Button::Button(int locX, int locY, int width, int height)
 	background = Color(200, 200, 200);
 	border = Color(0, 0, 0);
 	buttonText.setColor(Color(0, 0, 0));
+	buttonText.SetLocation(Point(10, 10));
 }
 
 Button::~Button()
 {
 	hit = pressed = false;
+}
+
+void Button::SetZeroPointForControls(Point zeroPoint)
+{
+	buttonText.SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
 }
 
 void Button::SetButtonText(std::string text)
