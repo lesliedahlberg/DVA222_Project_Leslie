@@ -32,10 +32,16 @@ void UIControl::SetZeroPoint(Point zeroPoint)
 {
 	this->zeroPoint.X = zeroPoint.X;
 	this->zeroPoint.Y = zeroPoint.Y;
+	SetZeroPointForControls(zeroPoint);
 }
 
 void UIControl::SetLocation(Point location)
 {
 	X = location.X;
 	Y = location.Y;
+}
+
+void UIControl::OnLoaded()
+{
+	SetZeroPoint(zeroPoint);
 }

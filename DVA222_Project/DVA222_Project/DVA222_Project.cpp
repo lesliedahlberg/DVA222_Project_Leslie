@@ -66,7 +66,7 @@ int _tmain(int argc, char** argv)
 
 	
 	window->Add(panel_1);
-	window->SetZeroPoint(Point(10, 10));
+	
 
 
 	ControlBase* base = window;

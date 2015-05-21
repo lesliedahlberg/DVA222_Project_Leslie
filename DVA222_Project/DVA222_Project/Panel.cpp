@@ -62,15 +62,12 @@ void Panel::PaintElements()
 
 void Panel::OnPaint()
 {
+	
 	SetColor(background.R, background.G, background.B);
 	FillRectangle(X+zeroPoint.X, Y+zeroPoint.Y, Width, Height);
 	PaintElements();
 }
 
-void Panel::OnLoaded()
-{
-
-}
 
 void Panel::OnKeyboard(unsigned char key, int x, int y)
 {

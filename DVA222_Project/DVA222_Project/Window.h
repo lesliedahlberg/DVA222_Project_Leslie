@@ -13,5 +13,6 @@ public:
 	Window();
 	Window(int locX, int locY, int width, int height);
 	~Window();
+	
 };
 

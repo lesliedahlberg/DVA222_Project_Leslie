@@ -18,7 +18,7 @@ public:
 	CheckBox(int x, int y);
 	~CheckBox();
 
-	virtual void OnLoaded();
+	
 	virtual void OnPaint(void);
 	virtual void OnMouseDown(int button, int x, int y);
 	virtual void OnMouseUp(int button, int x, int y);
