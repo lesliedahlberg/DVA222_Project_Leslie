@@ -9,6 +9,7 @@
 #include "Label.h"
 #include "Container.h"
 #include "Panel.h"
+#include "RadioButton.h"
 
 using namespace std;
 
@@ -21,12 +22,16 @@ int _tmain(int argc, char** argv)
     //------------------------------------------------------------------------------------------------------------------------------------
     
 	//ControlBase* button = new MyButton(10,10,190,60);
+	Container *container = new Container();
 	Label* label1 = new Label(0, 0);
 	label1->setText("AJ AJ");
 	label1->setColor(256, 256, 256);
 
 	Button* button = new Button(0, 0, 200, 50);
 	button->SetButtonText("Click Here!");
+
+	RadioButton *radio = new RadioButton(400, 400);
+	radio->setText("Radio");
 
 	Panel* smallPanel = new Panel(0, 0, 100, 100);
 	smallPanel->SetBackground(Color(256, 0, 0));
@@ -39,9 +44,13 @@ int _tmain(int argc, char** argv)
 	Panel* panel = new Panel(100, 100, 200, 200);
 	panel->Add(smallPanel);
 	panel->SetBackground(Color(0, 256, 0));
+	container->Add(panel);
+	container->Add(button);
+	container->Add(radio);
+	
 
 	ControlBase* base = panel;
-	InitOGL(argc, argv, base);
+	InitOGL(argc, argv, container);
 
     delete base;
 	return 0;
