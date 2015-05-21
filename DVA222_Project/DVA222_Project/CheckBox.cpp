@@ -11,7 +11,7 @@ CheckBox::CheckBox(int x, int y)
 	:UIControl(x, y, 16, 16)
 {
 	hit = checked = false;
-	buttonText.setColor(Color(0, 0, 0));
+	buttonText.SetLocation(Point(13, 20));
 }
 
 CheckBox::~CheckBox()
@@ -25,8 +25,7 @@ void CheckBox::OnLoaded()
 
 void CheckBox::OnPaint(void)
 {
-	buttonText.SetLocation(Point(X + 25, Y + 12));
-	buttonText.OnPaint();
+	
 	SetColor(buttonColor.R, buttonColor.G, buttonColor.B);
 	DrawRectangle(X+zeroPoint.X, Y+zeroPoint.Y, Width, Height);
 	if (checked)
@@ -34,6 +33,8 @@ void CheckBox::OnPaint(void)
 		DrawLine(X + zeroPoint.X + 2, Y + zeroPoint.Y + 10, X + zeroPoint.X + 8, Y + zeroPoint.Y + 15);
 		DrawLine(X + zeroPoint.X + 8, Y + zeroPoint.Y + 15, X + zeroPoint.X + 14, Y + zeroPoint.Y + 5);
 	}
+
+	buttonText.OnPaint();
 }
 
 void CheckBox::OnMouseDown(int button, int x, int y)
@@ -60,6 +61,17 @@ void CheckBox::OnMouseMove(int button, int x, int y)
 	{
 		hit = false;
 	}
+}
+
+void CheckBox::SetZeroPoint(Point zeroPoint)
+{
+	UIControl::SetZeroPoint(zeroPoint);
+	SetZeroPointForControls(zeroPoint);
+}
+
+void CheckBox::SetZeroPointForControls(Point zeroPoint)
+{
+	buttonText.SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
 }
 
 void CheckBox::setText(std::string text)

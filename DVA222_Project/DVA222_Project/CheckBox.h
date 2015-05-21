@@ -24,6 +24,9 @@ public:
 	virtual void OnMouseUp(int button, int x, int y);
 	virtual void OnMouseMove(int button, int x, int y);
 
+	void SetZeroPoint(Point zeroPoint);
+	void SetZeroPointForControls(Point zeroPoint);
+
 	virtual void setText(std::string);
 	virtual void setTextColor(int r, int g, int b);
 	virtual void setColor(int r, int g, int b);
