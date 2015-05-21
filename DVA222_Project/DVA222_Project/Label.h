@@ -18,9 +18,7 @@ public:
 	Label(int locX, int locY);
 	~Label();
 
-	virtual void SetLocation(Point location);
-	virtual void SetZeroPoint(Point zeroPoint);
-	virtual void SetZeroPointForControls(Point zeroPoint);
+	
 
 	//Set, Get
 	virtual void setText(std::string text);

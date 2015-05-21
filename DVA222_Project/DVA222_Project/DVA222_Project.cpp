@@ -38,11 +38,13 @@ int _tmain(int argc, char** argv)
 	panel_2->Add(label_1);
 
 	panel_1->SetLocation(Point(10, 10));
-	panel_2->SetLocation(Point(10, 10));
+	panel_2->SetLocation(Point(100, 100));
+
+	CheckBox *check = new CheckBox(100, 100);
 
 	ControlBase* base = panel_1;
-	CheckBox *check = new CheckBox(100, 100);
-	InitOGL(argc, argv, check);
+	
+	InitOGL(argc, argv, base);
 
 	delete base;
 	return 0;
