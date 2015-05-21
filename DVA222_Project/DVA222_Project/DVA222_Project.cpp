@@ -41,6 +41,7 @@ int _tmain(int argc, char** argv)
 	panel_2->SetLocation(Point(100, 100));
 
 	CheckBox *check = new CheckBox(100, 100);
+	panel_1->Add(check);
 
 	ControlBase* base = panel_1;
 	

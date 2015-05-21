@@ -8,7 +8,7 @@ CheckBox::CheckBox()
 }
 
 CheckBox::CheckBox(int x, int y)
-	:ControlBase(x, y, 16, 16)
+	:UIControl(x, y, 16, 16)
 {
 	hit = checked = false;
 	buttonText.setColor(Color(0, 0, 0));
@@ -28,10 +28,10 @@ void CheckBox::OnPaint(void)
 	buttonText.SetLocation(Point(X + 25, Y + 12));
 	buttonText.OnPaint();
 	SetColor(buttonColor.R, buttonColor.G, buttonColor.B);
-	DrawRectangle(X, Y, Width, Height);
+	DrawRectangle(X+zeroPoint.X, Y+zeroPoint.Y, Width, Height);
 	if (checked)
 	{
-		DrawLine(X + 2, Y + 10, X + 8, Y + 15);
+		DrawLine(X+zeroPoint.X + 2, Y+zeroPoint.Y + 10, X + 8, Y + 15);
 	}
 }
 
@@ -53,7 +53,7 @@ void CheckBox::OnMouseUp(int button, int x, int y)
 
 void CheckBox::OnMouseMove(int button, int x, int y)
 {
-	if (x > X && x < X + Width && y > Y && y < Y + Height)
+	if (x > X+zeroPoint.X && x < X+zeroPoint.X + Width && y > Y+zeroPoint.Y && y < Y+zeroPoint.Y + Height)
 		hit = true;
 	else
 	{

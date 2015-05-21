@@ -4,7 +4,7 @@
 #include "Header.h"
 
 class CheckBox :
-	public ControlBase
+	public UIControl
 {
 private:
 	Label buttonText;

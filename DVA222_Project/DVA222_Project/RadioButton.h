@@ -3,7 +3,7 @@
 #include "Label.h"
 #include "Header.h"
 class RadioButton :
-	public ControlBase
+	public UIControl
 {
 private:
 	std::string text;

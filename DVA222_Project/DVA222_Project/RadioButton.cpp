@@ -9,7 +9,7 @@ RadioButton::RadioButton()
 }
 
 RadioButton::RadioButton(int x, int y)
-: ControlBase(x, y, 16, 16)
+: UIControl(x, y, 16, 16)
 {
 	hit = fillButton = false;
 	buttonText.setColor(textColor);
@@ -49,13 +49,13 @@ void RadioButton::OnPaint(void)
 	buttonText.SetLocation(Point(X+12, Y+5));
 	buttonText.OnPaint();
 	SetColor(button.R, button.G, button.B);
-	DrawCircle(X, Y, Width / 2);
+	DrawCircle(X+zeroPoint.X, Y+zeroPoint.Y, Width / 2);
 	if (fillButton)
 	{
 		int currentRadius = Width / 4;
 		for (int i = 1; currentRadius > 0; i++)
 		{
-			DrawCircle(X, Y, currentRadius);
+			DrawCircle(X+zeroPoint.X, Y+zeroPoint.Y, currentRadius);
 			currentRadius -= i/2;
 		}
 	}
