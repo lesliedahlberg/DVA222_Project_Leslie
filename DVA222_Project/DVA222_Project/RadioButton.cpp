@@ -12,7 +12,7 @@ RadioButton::RadioButton(int x, int y)
 : ControlBase(x, y, 16, 16)
 {
 	hit = fillButton = false;
-	buttonText.setColor(0, 0, 0);
+	buttonText.setColor(textColor);
 }
 
 RadioButton::~RadioButton()
