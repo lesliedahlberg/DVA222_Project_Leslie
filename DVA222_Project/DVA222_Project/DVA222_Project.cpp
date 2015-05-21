@@ -9,6 +9,7 @@
 #include "Label.h"
 #include "Panel.h"
 #include "RadioButton.h"
+#include "CheckBox.h"
 
 using namespace std;
 
