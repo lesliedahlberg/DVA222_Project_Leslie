@@ -77,6 +77,7 @@ int _tmain(int argc, char** argv)
 	
 	Panel* panel_1 = new Panel(10 + 250 + 20, 50 + 150 + 20, 250, 150);
 	panel_1->SetBackground(Color(250, 120, 120));
+	panel_1->z_order = 1;
 
 	Label* label_panel_1 = new Label(20, 20);
 	label_panel_1->setText("I am a panel.");
@@ -86,6 +87,7 @@ int _tmain(int argc, char** argv)
 
 	Panel* panel_2 = new Panel(10 + 250 + 20 - 100, 50 + 150 + 20 + 50, 250, 150);
 	panel_2->SetBackground(Color(120, 250, 120));
+	panel_2->z_order = 2;
 
 	Label* label_panel_2 = new Label(20, 20);
 	label_panel_2->setText("I am also a panel.");
@@ -105,9 +107,10 @@ int _tmain(int argc, char** argv)
 	window_1->Add(radioButtonGroup_1);
 	window_1->Add(freeRadioButton_1);
 	window_1->Add(freeCheckBox_1);
-	window_1->Add(image_1);
+	
 	window_1->Add(panel_1);
 	window_1->Add(panel_2);
+	window_1->Add(image_1);
 	
 	ControlBase* base = window_1;
 

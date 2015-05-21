@@ -44,14 +44,7 @@ void Panel::SetBackground(Color background)
 	this->background = background;
 }
 
-void Panel::PaintElements()
-{
-	int length = controls.size();
-	for (size_t i = 0; i < length; i++)
-	{
-		controls.at(i)->OnPaint();
-	}
-}
+
 
 void Panel::OnLoaded()
 {
@@ -60,6 +53,24 @@ void Panel::OnLoaded()
 	for (size_t i = 0; i < length; i++)
 	{
 		controls.at(i)->OnLoaded();
+	}
+}
+
+bool compare(const UIControl* c1, const UIControl* c2)
+{
+	return c1->z_order < c2->z_order;
+}
+
+void Panel::PaintElements()
+{
+
+	
+
+	std::sort(controls.begin(), controls.end(), compare);
+	int length = controls.size();
+	for (size_t i = 0; i < length; i++)
+	{
+		controls.at(i)->OnPaint();
 	}
 }
 

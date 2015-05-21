@@ -7,9 +7,12 @@ class UIControl :
 protected:
 	Point zeroPoint;
 public:
+	int z_order;
 	UIControl();
 	UIControl(int locX, int locY, int width, int height);
 	~UIControl();
+
+	
 
 	virtual void OnLoaded();
 	virtual Point GetLocation();

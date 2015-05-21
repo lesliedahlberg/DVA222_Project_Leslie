@@ -5,6 +5,7 @@
 #include "Header.h"
 #include "Graphix.h"
 #include "Label.h"
+#include <algorithm>
 
 class Panel : public UIControl
 {

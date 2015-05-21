@@ -5,17 +5,20 @@
 UIControl::UIControl()
 {
 	zeroPoint = Point(0, 0);
+	z_order = 0;
 }
 
 UIControl::UIControl(int locX, int locY, int width, int height)
 	: ControlBase(locX, locY, width, height)
 {
 	zeroPoint = Point(0, 0);
+	z_order = 0;
 }
 
 
 UIControl::~UIControl()
 {
+
 }
 
 Point UIControl::GetLocation()
@@ -42,5 +45,5 @@ void UIControl::SetLocation(Point location)
 
 void UIControl::OnLoaded()
 {
-	//SetZeroPoint(zeroPoint);
+
 }
