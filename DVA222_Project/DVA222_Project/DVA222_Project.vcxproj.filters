@@ -60,6 +60,12 @@
     <ClInclude Include="CheckBoxGroup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ElementGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RadioButtonGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -99,6 +105,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CheckBoxGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ElementGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RadioButtonGroup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

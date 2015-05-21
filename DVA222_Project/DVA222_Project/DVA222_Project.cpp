@@ -13,6 +13,7 @@
 #include "Window.h"
 #include "ImageBox.h"
 #include "CheckBoxGroup.h"
+#include "RadioButtonGroup.h"
 
 using namespace std;
 
@@ -54,23 +55,41 @@ int _tmain(int argc, char** argv)
 	//panel_1->SetLocation(Point(100, 100));
 	//panel_2->SetLocation(Point(100, 100));
 	
-	CheckBox *check = new CheckBox(50, 50);
+	CheckBox *check = new CheckBox(0, 0);
+	CheckBox *check2 = new CheckBox(0, 0);
+	CheckBox *check3 = new CheckBox(0, 0);
+	RadioButton *radio1 = new RadioButton(0, 0);
+	RadioButton *radio2 = new RadioButton(0, 0);
+	RadioButton *radio3 = new RadioButton(0, 0);
 	
 	RadioButton * radio = new RadioButton(0, 0);
 	radio->setColor(Color(256, 256, 256));
 	radio->setTextColor(Color(256, 256, 256));
 	radio->setText("Radio");
 	check->setText("Check");
+	check2->setText("Check2");
+	CheckBoxGroup *group = new CheckBoxGroup(40, 40, 200, 200);
+	RadioButtonGroup *radioGroup = new RadioButtonGroup(150, 150, 150, 150);
+	radioGroup->SetBackground(Color(150, 150, 150));
+	radioGroup->SetBorderColor(Color(0,0,0));
+	radio1->setText("Radio");
+	radioGroup->Add(radio1);
+	radioGroup->Add(radio2);
+	radioGroup->Add(radio3);
+	group->SetBackground(Color(256, 256, 256));
+	group->Add(check);
+	group->Add(check2);
+	group->Add(check3);
 
 	panel_2->Add(radio);
-	panel_1->Add(check);
+	panel_1->Add(group);
+	panel_1->Add(radioGroup);
+	//panel_3->Add(group);
 
 	ImageBox *image = new ImageBox(100, 100, 500, 500);
 	panel_1->Add(image);
 	
 	window->Add(panel_1);
-	
-
 
 	ControlBase* base = window;
 

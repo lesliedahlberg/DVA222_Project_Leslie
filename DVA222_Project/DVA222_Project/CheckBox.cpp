@@ -5,6 +5,8 @@
 
 CheckBox::CheckBox()
 {
+	hit = checked = false;
+	buttonText.SetLocation(Point(13, 20));
 }
 
 CheckBox::CheckBox(int x, int y)

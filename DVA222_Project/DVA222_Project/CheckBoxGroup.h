@@ -1,17 +1,17 @@
 #pragma once
 #include "Panel.h"
 #include "CheckBox.h"
+#include "ElementGroup.h"
 using namespace std;
 class CheckBoxGroup :
-	public Panel
+	public ElementGroup
 {
-protected:
-	vector <CheckBox> boxes;
+
 public:
 
 	CheckBoxGroup();
 	CheckBoxGroup(int locX, int locY, int w, int h);
-	void AddCheckBox(std::string text);
+	
 	~CheckBoxGroup();
 };
 
