@@ -28,16 +28,14 @@ void RadioButton::setText(std::string text)
 {
 	buttonText.setText(text);
 }
-void RadioButton::setColor(int r, int g, int b)
+void RadioButton::setColor(Color color)
 {
-	button.R = r;
-	button.B = b;
-	button.G = g;
+	button = color;
 }
 
-void RadioButton::setTextColor(int r, int g, int b)
+void RadioButton::setTextColor(Color color)
 {
-	buttonText.setColor(r, g, b);
+	buttonText.setColor(color);
 }
 
 void RadioButton::setPosition(int locX, int locY)
@@ -48,7 +46,7 @@ void RadioButton::setPosition(int locX, int locY)
 
 void RadioButton::OnPaint(void)
 {
-	buttonText.setPosition(X+12, Y+5);
+	buttonText.SetLocation(Point(X+12, Y+5));
 	buttonText.OnPaint();
 	SetColor(button.R, button.G, button.B);
 	DrawCircle(X, Y, Width / 2);

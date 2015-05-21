@@ -41,7 +41,8 @@ int _tmain(int argc, char** argv)
 	panel_2->SetLocation(Point(10, 10));
 
 	ControlBase* base = panel_1;
-	InitOGL(argc, argv, base);
+	CheckBox *check = new CheckBox(100, 100);
+	InitOGL(argc, argv, check);
 
 	delete base;
 	return 0;

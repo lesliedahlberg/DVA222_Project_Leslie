@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "CheckBox.h"
+#include "Graphix.h"
 
 
 CheckBox::CheckBox()
@@ -19,35 +20,29 @@ CheckBox::~CheckBox()
 
 void CheckBox::OnLoaded()
 {
-
+	
 }
 
 void CheckBox::OnPaint(void)
 {
-	buttonText.setPosition(X + 25, Y + 12);
+	buttonText.SetLocation(Point(X + 25, Y + 12));
 	buttonText.OnPaint();
 	SetColor(buttonColor.R, buttonColor.G, buttonColor.B);
 	DrawRectangle(X, Y, Width, Height);
-	/*if (fillButton)
+	if (checked)
 	{
-	int currentRadius = Width / 4;
-	for (int i = 1; currentRadius > 0; i++)
-	{
-	DrawCircle(X, Y, currentRadius);
-	currentRadius -= i / 2;
+		DrawLine(X + 2, Y + 10, X + 8, Y + 15);
 	}
-	}*/
 }
 
 void CheckBox::OnMouseDown(int button, int x, int y)
 {
-	if (checked)
+	if (hit && button == MOUSE_LEFT)
 	{
-
-	}
-	else
-	{
-
+		if (!checked)
+			checked = true;
+		else
+			checked = false;
 	}
 }
 

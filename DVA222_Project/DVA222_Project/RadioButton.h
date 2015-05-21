@@ -27,8 +27,8 @@ public:
 	virtual void OnMouseMove(int button, int x, int y);
 
 	virtual void setText(std::string text);
-	virtual void setTextColor(int r, int g, int b);
-	virtual void setColor(int r, int g, int b);
+	virtual void setTextColor(Color color);
+	virtual void setColor(Color color);
 	virtual void setPosition(int locX, int locY);
 	virtual void setStatus(bool checked);
 	virtual bool getStatus();
