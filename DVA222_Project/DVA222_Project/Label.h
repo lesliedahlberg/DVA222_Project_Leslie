@@ -17,10 +17,13 @@ public:
 	Label(int locX, int locY);
 	~Label();
 
+	virtual void SetLocation(Point location);
+	virtual void SetZeroPoint(Point zeroPoint);
+	virtual void SetZeroPointForControls(Point zeroPoint);
+
 	//Set, Get
 	virtual void setText(std::string text);
 	virtual void setColor(int r, int g, int b);
-	virtual void setPosition(int locX, int locY);
 
 	//The class is overriding the following Event Handlers inherited from the base class 
 	virtual void OnPaint();

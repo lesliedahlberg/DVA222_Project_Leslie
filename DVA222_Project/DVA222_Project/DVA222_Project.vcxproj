@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="CheckBox.h" />
     <ClInclude Include="Graphix.h" />
     <ClInclude Include="ControlBase.h" />
     <ClInclude Include="Header.h" />
@@ -92,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="CheckBox.cpp" />
     <ClCompile Include="DVA222_Project.cpp" />
     <ClCompile Include="Graphix.cpp" />
     <ClCompile Include="ControlBase.cpp" />
