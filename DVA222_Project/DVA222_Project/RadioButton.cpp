@@ -92,15 +92,30 @@ void RadioButton::setText(std::string text)
 	buttonText.setText(text);
 }
 
+std::string RadioButton::getText()
+{
+	return buttonText.getText();
+}
+
 void RadioButton::setTextColor(Color color)
 {
 	buttonText.setColor(color);
+}
+
+Color RadioButton::getTextColor()
+{
+	return buttonText.getColor();
 }
 
 //Looks
 void RadioButton::setColor(Color color)
 {
 	button = color;
+}
+
+Color RadioButton::getColor()
+{
+	return button;
 }
 
 //Status

@@ -25,9 +25,11 @@ public:
 
 	//Text
 	virtual void setText(std::string text);
+	virtual std::string getText();
 
 	//Looks
 	virtual void setColor(Color color);
+	virtual Color getColor();
 
 	//ControlBase Overrides
 	virtual void OnPaint();

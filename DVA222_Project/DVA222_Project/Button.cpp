@@ -96,6 +96,11 @@ void Button::SetButtonText(std::string text)
 	buttonText.setText(text);
 }
 
+std::string Button::GetButtonText()
+{
+	return buttonText.getText();
+}
+
 //Helper functions
 void Button::Draw()
 {

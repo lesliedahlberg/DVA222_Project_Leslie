@@ -26,6 +26,7 @@ public:
 
 	//Looks
 	virtual void SetBackground(Color background);
+	virtual Color GetBackground();
 
 	//ControlBase Overrides
 	virtual void OnPaint();

@@ -73,15 +73,30 @@ void CheckBox::setText(std::string text)
 	buttonText.setText(text);
 }
 
+std::string CheckBox::getText()
+{
+	return buttonText.getText();
+}
+
 void CheckBox::setTextColor(Color color)
 {
 	buttonText.setColor(color);
+}
+
+Color CheckBox::getTextColor()
+{
+	return buttonText.getColor();
 }
 
 //Looks
 void CheckBox::setColor(Color color)
 {
 	buttonColor = color;
+}
+
+Color CheckBox::getColor()
+{
+	return buttonColor;
 }
 
 //Status

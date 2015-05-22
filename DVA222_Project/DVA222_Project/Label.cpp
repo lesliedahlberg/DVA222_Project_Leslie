@@ -21,10 +21,20 @@ void Label::setText(std::string text)
 	this->text = text;
 }
 
+std::string Label::getText()
+{
+	return text;
+}
+
 //Looks
 void Label::setColor(Color color)
 {
 	this->color = color;
+}
+
+Color Label::getColor()
+{
+	return color;
 }
 
 //ControlBase Overrides

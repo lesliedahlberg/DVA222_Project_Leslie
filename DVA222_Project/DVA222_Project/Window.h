@@ -12,6 +12,7 @@ protected:
 	//Title bar
 	int titleBarHeight;
 	Label* title;
+	Color border;
 
 	//Mouse event bools
 	bool hit, pressed, moving;
@@ -38,9 +39,14 @@ public:
 
 	//Title
 	virtual void setTitle(std::string text);
+	virtual std::string getTitle();
 
 	//Looks
 	virtual void SetBackground(Color color);
+	virtual Color GetBackground();
+
+	virtual void SetBorderColor(Color color);
+	virtual Color GetBorderColor();
 
 	//Add elements
 	virtual void Add(UIControl* element);

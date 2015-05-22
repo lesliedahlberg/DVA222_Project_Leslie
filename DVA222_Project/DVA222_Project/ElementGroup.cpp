@@ -22,6 +22,11 @@ void ElementGroup::SetBorderColor(Color color)
 	border = color;
 }
 
+Color ElementGroup::GetBorderColor()
+{
+	return border;
+}
+
 //ControlBase Override
 void ElementGroup::OnPaint()
 {
@@ -48,4 +53,9 @@ void ElementGroup::PaintElements()
 void ElementGroup::SetTitle(std::string title)
 {
 	this->title->setText(title);
+}
+
+std::string ElementGroup::GetTitle()
+{
+	return title->getText();
 }

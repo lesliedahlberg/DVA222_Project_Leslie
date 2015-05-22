@@ -36,9 +36,12 @@ public:
 	//Label
 	virtual void setText(std::string);
 	virtual void setTextColor(Color color);
+	virtual std::string getText();
+	virtual Color getTextColor();
 
 	//Looks
 	virtual void setColor(Color color);
+	virtual Color getColor();
 
 	//Status
 	virtual void setStatus(bool checked);

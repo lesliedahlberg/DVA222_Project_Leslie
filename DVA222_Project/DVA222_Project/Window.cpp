@@ -16,6 +16,7 @@ Window::Window()
 
 	//Looks
 	SetBackground(Color(207, 216, 220));
+	SetBorderColor(Color(0, 0, 0));
 
 	//Title
 	title = new Label();
@@ -39,6 +40,9 @@ void Window::OnLoaded()
 
 void Window::OnPaint()
 {
+	SetColor(border.R, border.G, border.B);
+	DrawRectangle(X, Y-1, Width+1, Height+1);
+
 	//Looks
 	SetColor(96, 125, 139);
 
@@ -130,11 +134,32 @@ void Window::setTitle(std::string text)
 
 }
 
+std::string Window::getTitle()
+{
+	return title->getText();
+}
+
 //Looks
 void Window::SetBackground(Color color)
 {
 	panel->SetBackground(color);
 }
+
+Color Window::GetBackground()
+{
+	return panel->GetBackground();
+}
+
+void Window::SetBorderColor(Color color)
+{
+	this->border = color;
+}
+Color Window::GetBorderColor()
+{
+	return border;
+}
+
+
 
 //Add elements
 void Window::Add(UIControl* element)

@@ -58,10 +58,12 @@ public:
 
 	//Label
 	virtual void SetButtonText(std::string text);
+	virtual std::string GetButtonText();
 	 
 	//Looks
 	virtual void SetColorNormal(Color background, Color border, Color text);
 	virtual void SetColorHover(Color background, Color border, Color text);
 	virtual void SetColorClick(Color background, Color border, Color text);
+	
 };
 

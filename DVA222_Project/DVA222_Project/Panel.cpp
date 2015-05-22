@@ -21,6 +21,11 @@ void Panel::SetBackground(Color background)
 	this->background = background;
 }
 
+Color Panel::GetBackground()
+{
+	return background;
+}
+
 //ControlBase Overrides
 void Panel::OnPaint()
 {
