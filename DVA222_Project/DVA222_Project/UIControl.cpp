@@ -1,29 +1,53 @@
 #include "stdafx.h"
 #include "UIControl.h"
 
-
+//Contructor
 UIControl::UIControl()
 {
-	zeroPoint = Point(0, 0);
-	z_order = 0;
+	//Default values
+	SetLocation(Point(0, 0));
+	SetSize(Size(0, 0));
+	SetZeroPoint(Point(0, 0));
+	SetZ(0);
 }
 
-UIControl::UIControl(int locX, int locY, int width, int height)
-	: ControlBase(locX, locY, width, height)
-{
-	zeroPoint = Point(0, 0);
-	z_order = 0;
-}
-
-
+//Destructor
 UIControl::~UIControl()
 {
 
 }
 
+//Location
 Point UIControl::GetLocation()
 {
 	return Point(X, Y);
+}
+
+void UIControl::SetLocation(Point location)
+{
+	X = location.X;
+	Y = location.Y;
+	SetZeroPointForControls();
+}
+
+
+//Size
+Size UIControl::GetSize()
+{
+	return Size(Width, Height);
+}
+
+void UIControl::SetSize(Size size)
+{
+	Width = size.Width;
+	Height = size.Height;
+}
+
+//Relative location start point
+void UIControl::SetZeroPoint(Point zeroPoint)
+{
+	this->zeroPoint.X = zeroPoint.X;
+	this->zeroPoint.Y = zeroPoint.Y;
 }
 
 void UIControl::SetZeroPointForControls()
@@ -31,19 +55,12 @@ void UIControl::SetZeroPointForControls()
 	
 }
 
-void UIControl::SetZeroPoint(Point zeroPoint)
+//Z
+void UIControl::SetZ(int z)
 {
-	this->zeroPoint.X = zeroPoint.X;
-	this->zeroPoint.Y = zeroPoint.Y;
+	this->z = z;
 }
-
-void UIControl::SetLocation(Point location)
+int UIControl::GetZ()
 {
-	X = location.X;
-	Y = location.Y;
-}
-
-void UIControl::OnLoaded()
-{
-
+	return z;
 }

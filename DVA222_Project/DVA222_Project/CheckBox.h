@@ -6,29 +6,41 @@
 class CheckBox :
 	public UIControl
 {
-private:
+protected:
+	//Label
 	Label buttonText;
+	
+	//Looks
 	Color buttonColor;
-	Color textColor;
+	
+	//Mouse event bools
 	bool checked;
 	bool hit;
 
 public:
+	//Constructor
 	CheckBox();
-	CheckBox(int x, int y);
+
+	//Destructor
 	~CheckBox();
 
-	virtual void SetLocation(Point location);
+	//ControlBase Override
 	virtual void OnPaint(void);
 	virtual void OnMouseDown(int button, int x, int y);
 	virtual void OnMouseUp(int button, int x, int y);
 	virtual void OnMouseMove(int button, int x, int y);
 
+	//Custom SetZeroPointForControls
 	void SetZeroPointForControls();
 
+	//Label
 	virtual void setText(std::string);
-	virtual void setTextColor(int r, int g, int b);
-	virtual void setColor(int r, int g, int b);
+	virtual void setTextColor(Color color);
+
+	//Looks
+	virtual void setColor(Color color);
+
+	//Status
 	virtual void setStatus(bool checked);
 	virtual bool getStatus();
 };

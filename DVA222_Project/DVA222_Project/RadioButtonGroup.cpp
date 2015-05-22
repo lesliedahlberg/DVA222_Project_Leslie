@@ -2,16 +2,17 @@
 #include "RadioButtonGroup.h"
 #include "RadioButton.h"
 
-
+//Constructor
 RadioButtonGroup::RadioButtonGroup()
 {
 }
 
-RadioButtonGroup::RadioButtonGroup(int locX, int locY, int w, int h)
-:ElementGroup(locX, locY, w, h)
+//Destructor
+RadioButtonGroup::~RadioButtonGroup()
 {
 }
 
+//Reset radios
 void RadioButtonGroup::Reset()
 {
 	int size = controls.size();
@@ -20,8 +21,4 @@ void RadioButtonGroup::Reset()
 		RadioButton* e = (RadioButton*) controls.at(i);
 		e->setStatus(false);
 	}
-}
-
-RadioButtonGroup::~RadioButtonGroup()
-{
 }

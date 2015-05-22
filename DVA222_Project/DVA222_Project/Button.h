@@ -11,29 +11,40 @@
 class Button :
 	public UIControl
 {
-private:
+protected:
+	//Label
 	Label buttonText;
+
+	//Looks
 	Color background;
 	Color border;
+
+	//Mouse event bools
 	bool hit;
 	bool pressed;
 
+	//Helper functions
 	virtual void Draw();
 
 public:
+	//Constructor
 	Button();
-	Button(int locX, int locY, int width, int height);
+
+	//Destructor
 	~Button();
 
-	virtual void SetZeroPointForControls();
-	virtual void SetButtonText(std::string text);
-	virtual void SetSize(int Width, int Height);
-	
-	//The class is overriding the following Event Handlers inherited from the base class 
+	//ControlBase Override
 	virtual void OnPaint();
 	virtual void OnLoaded();
 	virtual void OnMouseMove(int button, int x, int y);
 	virtual void OnMouseDown(int button, int x, int y);
 	virtual void OnMouseUp(int button, int x, int y);
+
+	//Custom SetZeroPointForControls
+	virtual void SetZeroPointForControls();
+
+	//Label
+	virtual void SetButtonText(std::string text);
+	
 };
 

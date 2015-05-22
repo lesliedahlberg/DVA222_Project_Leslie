@@ -9,26 +9,29 @@
 class Label :
 	public UIControl
 {
-private:
+protected:
+	//Text
 	std::string text;
+
+	//Looks
 	Color color;
 
 public:
+	//Constructor
 	Label();
-	Label(int locX, int locY);
+
+	//Destructor
 	~Label();
 
-	
-
-	//Set, Get
+	//Text
 	virtual void setText(std::string text);
-	virtual void setColor(Color color);
-	virtual void SetLocation(Point location);
-	virtual void SetZeroPointForControls();
 
-	//The class is overriding the following Event Handlers inherited from the base class 
+	//Looks
+	virtual void setColor(Color color);
+
+	//ControlBase Overrides
 	virtual void OnPaint();
-	virtual void OnLoaded();
+
 };
 
 

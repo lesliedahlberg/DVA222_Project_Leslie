@@ -1,54 +1,26 @@
 #include "stdafx.h"
 #include "Panel.h"
 
-
+//Contructor
 Panel::Panel()
-{
-
-}
-
-Panel::Panel(int locX, int locY, int width, int height) : UIControl(locX, locY, width, height)
 {
 	
 }
 
+//Desctructor
 Panel::~Panel()
 {
 }
 
-void Panel::SetLocation(Point location)
-{
-	UIControl::SetLocation(location);
-}
-
-void Panel::SetZeroPointForControls()
-{
-	
-	int length = controls.size();
-	for (size_t i = 0; i < length; i++)
-	{
-		controls.at(i)->SetZeroPoint(Point(zeroPoint.X+X, zeroPoint.Y+Y));
-		controls.at(i)->SetZeroPointForControls();
-	}
-}
-
-void Panel::Add(UIControl* element)
-{
-	element->SetZeroPoint(Point(X+zeroPoint.X, Y+zeroPoint.Y));
-	controls.push_back(element);
-	
-}
-
+//Looks
 void Panel::SetBackground(Color background)
 {
 	this->background = background;
 }
 
-
-
+//ControlBase Overrides
 void Panel::OnLoaded()
 {
-
 	int length = controls.size();
 	for (size_t i = 0; i < length; i++)
 	{
@@ -56,29 +28,15 @@ void Panel::OnLoaded()
 	}
 }
 
-bool compare(const UIControl* c1, const UIControl* c2)
-{
-	return c1->z_order < c2->z_order;
-}
-
-void Panel::PaintElements()
-{
-
-	
-
-	std::sort(controls.begin(), controls.end(), compare);
-	int length = controls.size();
-	for (size_t i = 0; i < length; i++)
-	{
-		controls.at(i)->OnPaint();
-	}
-}
-
 void Panel::OnPaint()
 {
-	
+	//Set background color
 	SetColor(background.R, background.G, background.B);
+	
+	//Paint panel
 	FillRectangle(X+zeroPoint.X, Y+zeroPoint.Y, Width, Height);
+	
+	//Paint elements
 	PaintElements();
 }
 
@@ -127,3 +85,44 @@ void Panel::OnResize(int width, int height)
 		controls.at(i)->OnResize(width, height);
 	}
 }
+
+//Custom SetZeroPointForControls
+void Panel::SetZeroPointForControls()
+{
+	int length = controls.size();
+	for (size_t i = 0; i < length; i++)
+	{
+		//Set Zero Point for control
+		controls.at(i)->SetZeroPoint(Point(zeroPoint.X + X, zeroPoint.Y + Y));
+		
+		//Set Zero Point for controls children
+		controls.at(i)->SetZeroPointForControls();
+	}
+}
+
+//Add element to panel
+void Panel::Add(UIControl* element)
+{
+	//Set Zero Point for new control
+	element->SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
+	
+	//Add element
+	controls.push_back(element);
+}
+
+
+
+//Helper function for painting panel elements
+void Panel::PaintElements()
+{
+	//For for Z
+	//std::sort(controls.begin(), controls.end(), compare);
+	
+	//Paint controls
+	int length = controls.size();
+	for (size_t i = 0; i < length; i++)
+	{
+		controls.at(i)->OnPaint();
+	}
+}
+

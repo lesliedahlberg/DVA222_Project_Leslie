@@ -31,6 +31,15 @@ typedef struct _point
 
 typedef struct _size
 {
+	_size()
+	{
+
+	}
+	_size(double width, double height)
+	{
+		Width = width;
+		Height = height;
+	}
 	double Width;
 	double Height;
 }Size;

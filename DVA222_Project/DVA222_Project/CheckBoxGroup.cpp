@@ -2,16 +2,12 @@
 #include "CheckBoxGroup.h"
 #include "RadioButton.h"
 
-
+//Constructor
 CheckBoxGroup::CheckBoxGroup()
 {
 }
 
-CheckBoxGroup::CheckBoxGroup(int x, int y, int w, int h)
-:ElementGroup(x, y, w, h)
-{
-}
-
+//Destructor
 CheckBoxGroup::~CheckBoxGroup()
 {
 }

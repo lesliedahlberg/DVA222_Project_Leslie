@@ -9,21 +9,25 @@
 class Window : public UIControl
 {
 protected:
-	int xOff, yOff;
-	bool hit, pressed, moving;
-	Color background;
-	Point clickLocation;
-	Point difference;
-	Panel* panel;
+	//Title bar
+	int titleBarHeight;
 	Label* title;
+
+	//Mouse event bools
+	bool hit, pressed, moving;
+	Point clickLocation;
+
+	//Main panel
+	Panel* panel;
+	
 public:
+	//Constructor
 	Window();
-	Window(int locX, int locY, int width, int height);
+
+	//Destructor
 	~Window();
-	virtual void setTitle(std::string text);
-	virtual void Add(UIControl* element);
-	virtual void SetLocation(Point location);
-	virtual void SetBackground(Color colro);
+
+	//ControlBase Overrides
 	virtual void OnPaint();
 	virtual void OnLoaded();
 	virtual void OnKeyboard(unsigned char key, int x, int y);
@@ -31,5 +35,21 @@ public:
 	virtual void OnMouseUp(int button, int x, int y);
 	virtual void OnMouseMove(int button, int x, int y);
 	virtual void OnResize(int width, int height);
+
+	//Title
+	virtual void setTitle(std::string text);
+
+	//Looks
+	virtual void SetBackground(Color color);
+
+	//Add elements
+	virtual void Add(UIControl* element);
+
+	//Custom SetZeroPointForControls
+	virtual void SetZeroPointForControls();
+
+	//Size override
+	virtual void SetSize(Size size);
+	
 };
 

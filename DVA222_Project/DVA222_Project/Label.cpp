@@ -3,52 +3,37 @@
 #include "Graphix.h"
 #include "glut.h"
 
-
+//Constructor
 Label::Label()
 {
 	
 }
 
-Label::Label(int locX, int locY)
-	: UIControl(locY, locX, 0, 0)
-{
-	
-}
-
+//Destructor
 Label::~Label()
 {
 }
 
-void Label::SetZeroPointForControls()
-{
 
-}
-
-void Label::SetLocation(Point location)
-{
-	UIControl::SetLocation(Point(location.Y, location.X));
-
-}
-
-//Set, Get
+//Text
 void Label::setText(std::string text)
 {
 	this->text = text;
 }
+
+//Looks
 void Label::setColor(Color color)
 {
 	this->color = color;
 }
 
-
+//ControlBase Overrides
 void Label::OnPaint()
 {
-	//PAINT
+	//Set Color
 	SetColor(color.R, color.B, color.G);
+
+	//Draw text
 	DrawString(text, Y+zeroPoint.Y+10, X+zeroPoint.X);
-}
-
-void Label::OnLoaded()
-{
-
+	
 }

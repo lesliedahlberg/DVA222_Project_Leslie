@@ -1,22 +1,24 @@
 #include "stdafx.h"
 #include "ElementGroup.h"
 
-
+//Constructor
 ElementGroup::ElementGroup()
 {
+	
 }
 
-ElementGroup::ElementGroup(int locX, int locY, int w, int h)
-:Panel(locX, locY, w, h)
+//Destructor
+ElementGroup::~ElementGroup()
 {
-	background = Color(20, 20, 20);
 }
 
+//Looks
 void ElementGroup::SetBorderColor(Color color)
 {
 	border = color;
 }
 
+//ControlBase Override
 void ElementGroup::OnPaint()
 {
 	SetColor(background.R, background.G, background.B);
@@ -26,6 +28,7 @@ void ElementGroup::OnPaint()
 	PaintElements();
 }
 
+//Helper
 void ElementGroup::PaintElements()
 {
 	int length = controls.size();
@@ -34,9 +37,4 @@ void ElementGroup::PaintElements()
 		controls.at(i)->SetLocation(Point(10, 20 * i+10));
 		controls.at(i)->OnPaint();
 	}
-}
-
-
-ElementGroup::~ElementGroup()
-{
 }

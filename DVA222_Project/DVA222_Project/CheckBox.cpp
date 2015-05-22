@@ -2,40 +2,31 @@
 #include "CheckBox.h"
 #include "Graphix.h"
 
-
+//Constructor
 CheckBox::CheckBox()
 {
 	hit = checked = false;
+	buttonColor = Color(250, 50, 50);
+	SetSize(Size(16, 16));
 }
 
-CheckBox::CheckBox(int x, int y)
-	:UIControl(x, y, 16, 16)
-{
-	hit = checked = false;
-	buttonText.SetLocation(Point(8 - 5, 16 + 8));
-}
-
+//Destructor
 CheckBox::~CheckBox()
 {
 }
 
-void CheckBox::SetLocation(Point location)
-{
-	UIControl::SetLocation(location);
-	SetZeroPointForControls();
-}
-
-
+//ControlBase Override
 void CheckBox::OnPaint(void)
 {
-	SetZeroPoint(zeroPoint);
 	SetColor(buttonColor.R, buttonColor.G, buttonColor.B);
 	DrawRectangle(X+zeroPoint.X, Y+zeroPoint.Y, Width, Height);
+	
 	if (checked)
 	{
 		DrawLine(X + zeroPoint.X + 2, Y + zeroPoint.Y + 10, X + zeroPoint.X + 8, Y + zeroPoint.Y + 15);
 		DrawLine(X + zeroPoint.X + 8, Y + zeroPoint.Y + 15, X + zeroPoint.X + 14, Y + zeroPoint.Y + 5);
 	}
+
 	buttonText.OnPaint();
 }
 
@@ -65,31 +56,34 @@ void CheckBox::OnMouseMove(int button, int x, int y)
 	}
 }
 
+//Custom SetZeroPointForControls
 void CheckBox::SetZeroPointForControls()
 {
 	buttonText.SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
 	buttonText.SetZeroPointForControls();
+
+	//Set label location
+	buttonText.SetLocation(Point(Width + 8, Height/2 - 5));
 }
 
+//Label
 void CheckBox::setText(std::string text)
 {
 	buttonText.setText(text);
 }
 
-void CheckBox::setTextColor(int r, int g, int b)
+void CheckBox::setTextColor(Color color)
 {
-	textColor.R = r;
-	textColor.G = g;
-	textColor.B = b;
+	buttonText.setColor(color);
 }
 
-void CheckBox::setColor(int r, int g, int b)
+//Looks
+void CheckBox::setColor(Color color)
 {
-	buttonColor.R = r;
-	buttonColor.G = g;
-	buttonColor.B = b;
+	buttonColor = color;
 }
 
+//Status
 void CheckBox::setStatus(bool checked)
 {
 	this->checked = checked;

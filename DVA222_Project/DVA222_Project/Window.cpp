@@ -1,99 +1,91 @@
 #include "stdafx.h"
 #include "Window.h"
 
-
+//Constructor
 Window::Window()
 {
-	xOff = 0;
-	yOff = 20;
-}
+	//Title
+	titleBarHeight = 20;
 
-Window::Window(int locX, int locY, int width, int height) : UIControl(locX, locY, width, height)
-{
-	xOff = 0;
-	yOff = 20;
+	//Mouse event bools
 	pressed = hit = moving = false;
 	clickLocation = Point(0, 0);
-	panel = new Panel(0, 0, width, height);
-	title = new Label(0, 0);
+	
+	//Panel
+	panel = new Panel();
+
+	//Looks
+	SetBackground(Color(255, 255, 255));
+
+	//Title
+	title = new Label();
 	title->setColor(Color(50, 50, 50));
-	SetLocation(Point(locX, locY));
+
 }
 
+//Destructor
 Window::~Window()
 {
 
 }
 
-void Window::setTitle(std::string text)
-{
-	title->setText(text);
-}
-
-void Window::SetBackground(Color color)
-{
-	this->background = color;
-	panel->SetBackground(background);
-}
-
-void Window::Add(UIControl* element)
-{
-	panel->Add(element);
-}
-
-void Window::SetLocation(Point location)
-{
-	UIControl::SetLocation(location);
-	panel->SetZeroPoint(Point(X + xOff, Y + yOff));
-	panel->SetZeroPointForControls();
-	title->SetZeroPoint(Point(X+5, Y+5));
-	title->SetZeroPointForControls();
-}
-
+//ControlBase Overrides
 void Window::OnLoaded()
 {
 	panel->OnLoaded();
-	SetLocation(Point(X, Y));
+	title->OnLoaded();
+	SetZeroPointForControls();
 }
 
 void Window::OnPaint()
 {
+	//Looks
 	SetColor(180, 180, 180);
-	FillRectangle(X, Y, Width, yOff);
+
+	//Title bar
+	FillRectangle(X, Y, Width, titleBarHeight);
 	title->OnPaint();
+
+	//Main panel
 	panel->OnPaint();
 }
 
 void Window::OnKeyboard(unsigned char key, int x, int y)
 {
+	//Foreward
 	panel->OnKeyboard(key, x, y);
+	title->OnKeyboard(key, x, y);
 }
 
 void Window::OnMouseUp(int button, int x, int y)
 {
-	/*if (moving)
-	{
-		SetLocation(Point(X - (clickLocation.X - x), Y - clickLocation.Y + y));
-	}*/
 	pressed = moving = false;
+
+	//Foreward
 	panel->OnMouseUp(button, x, y);
+	title->OnMouseUp(button, x, y);
 }
 
 void Window::OnMouseDown(int button, int x, int y)
 {
 	if (hit)
 	{
+		//Register click
 		pressed = true;
 	}
+
+	//Foreward
 	panel->OnMouseDown(button, x, y);
+	title->OnMouseDown(button, x, y);
 }
 
 void Window::OnMouseMove(int button, int x, int y)
 {
-	if (x>X && x < X + Width && y>Y && y < Y + yOff)
+	if (x>X && x < X + Width && y>Y && y < Y + titleBarHeight)
 		hit = true;
 	else
 	{
+		//Reset
 		pressed = hit = false;
 	}
 	if (pressed)
@@ -104,19 +96,72 @@ void Window::OnMouseMove(int button, int x, int y)
 		}
 		else{
 			moving = true;
+
+			//Set initial mouse click point
 			clickLocation = Point(x, y);
 		}
 		
 	}
 	if (moving)
 	{
+		//Set new window location
 		SetLocation(Point(X+x-clickLocation.X, Y+y-clickLocation.Y));
+		
+		//Save current mouse location
 		clickLocation = Point(x, y);
 	}
+
+	//Foreward
 	panel->OnMouseMove(button, x, y);
+	title->OnMouseMove(button, x, y);
 }
 
 void Window::OnResize(int width, int height)
 {
+	//Foreward
 	panel->OnResize(width, height);
+	title->OnResize(width, height);
+}
+
+//Title
+void Window::setTitle(std::string text)
+{
+	title->setText(text);
+
+}
+
+//Looks
+void Window::SetBackground(Color color)
+{
+	panel->SetBackground(color);
+}
+
+//Add elements
+void Window::Add(UIControl* element)
+{
+	panel->Add(element);
+}
+
+//Custom SetZeroPointForControls
+void Window::SetZeroPointForControls()
+{
+	//Main panel
+	panel->SetZeroPoint(Point(X, Y + titleBarHeight));
+	panel->SetZeroPointForControls();
+
+	//Window title
+	title->SetZeroPoint(Point(X + 5, Y + 5));
+	title->SetZeroPointForControls();
+}
+
+//Size override
+void Window::SetSize(Size size)
+{
+	UIControl::SetSize(size);
+
+	//Set panel size
+	Size panelSize;
+	panelSize.Height = Height - titleBarHeight;
+	panelSize.Width = Width;
+	panel->SetSize(panelSize);
 }

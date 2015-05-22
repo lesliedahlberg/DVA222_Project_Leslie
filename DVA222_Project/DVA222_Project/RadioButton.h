@@ -6,36 +6,47 @@
 class RadioButton :
 	public UIControl
 {
-private:
-	std::string text;
-	int r, g, b;
+protected:
+	//Label
+	Label buttonText;
+
+	//Mouse event bools
 	bool hit;
 	bool fillButton;
+
+	//Looks
 	Color button;
-	Color textColor;
-	Label buttonText;
+	
+	//Group
 	RadioButtonGroup *parent;
 	bool inGroup;
 
 public:
-
+	//Constructor
 	RadioButton();
-	RadioButton(int x, int y);
-	RadioButton(int x, int y, RadioButtonGroup* group);
+	RadioButton(RadioButtonGroup* group);
+
+	//Desctructor
 	~RadioButton();
 	
-	virtual void SetLocation(Point location);
+	//ControlBase Override
 	virtual void OnLoaded();
 	virtual void OnPaint(void);
 	virtual void OnMouseDown(int button, int x, int y);
 	virtual void OnMouseUp(int button, int x, int y);
 	virtual void OnMouseMove(int button, int x, int y);
 
+	//Custom SetZeroPointForControls
 	virtual void SetZeroPointForControls();
 
+	//Label
 	virtual void setText(std::string text);
 	virtual void setTextColor(Color color);
+
+	//Looks
 	virtual void setColor(Color color);
+
+	//Status
 	virtual void setStatus(bool checked);
 	virtual bool getStatus();
 	

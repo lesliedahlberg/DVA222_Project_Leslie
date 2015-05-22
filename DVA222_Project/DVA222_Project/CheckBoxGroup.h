@@ -8,10 +8,10 @@ class CheckBoxGroup :
 {
 
 public:
-
+	//Constructor
 	CheckBoxGroup();
-	CheckBoxGroup(int locX, int locY, int w, int h);
-	
+
+	//Destructor
 	~CheckBoxGroup();
 };
 

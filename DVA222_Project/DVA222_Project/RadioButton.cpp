@@ -3,62 +3,33 @@
 #include "Graphix.h"
 #include "glut.h"
 
-
+//Constructor
 RadioButton::RadioButton()
 {
-}
-
-RadioButton::RadioButton(int x, int y)
-: UIControl(x, y, 16, 16)
-{
 	hit = fillButton = false;
-	buttonText.SetLocation(Point(8 - 5, 16 + 8));
 	inGroup = false;
+	SetSize(Size(16, 16));
 }
 
-RadioButton::RadioButton(int x, int y, RadioButtonGroup* group)
-: UIControl(x, y, 16, 16)
+RadioButton::RadioButton(RadioButtonGroup* group)
 {
 	hit = fillButton = false;
-	buttonText.SetLocation(Point(8-5, 16+8));
+	buttonText.SetLocation(Point(16 + 8, 8 - 5));
 	parent = group;
 	inGroup = true;
+	SetSize(Size(16, 16));
 }
 
+//Desctructor
 RadioButton::~RadioButton()
 {
 }
 
+//ControlBase Override
 void RadioButton::OnLoaded()
 {
-
+	buttonText.OnLoaded();
 }
-
-void RadioButton::setText(std::string text)
-{
-	buttonText.setText(text);
-}
-void RadioButton::setColor(Color color)
-{
-	button = color;
-}
-
-void RadioButton::setTextColor(Color color)
-{
-	buttonText.setColor(color);
-}
-
-void RadioButton::SetLocation(Point location)
-{
-	UIControl::SetLocation(location);
-	SetZeroPointForControls();
-}
-
-void RadioButton::SetZeroPointForControls()
-{
-	buttonText.SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
-}
-
 
 void RadioButton::OnPaint(void)
 {
@@ -104,6 +75,33 @@ void RadioButton::OnMouseMove(int button, int x, int y)
 	}
 }
 
+//Custom SetZeroPointForControls
+void RadioButton::SetZeroPointForControls()
+{
+	buttonText.SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
+
+	//Set label location
+	buttonText.SetLocation(Point(Width + 8, Height / 2 - 5));
+}
+
+//Label
+void RadioButton::setText(std::string text)
+{
+	buttonText.setText(text);
+}
+
+void RadioButton::setTextColor(Color color)
+{
+	buttonText.setColor(color);
+}
+
+//Looks
+void RadioButton::setColor(Color color)
+{
+	button = color;
+}
+
+//Status
 void RadioButton::setStatus(bool checked)
 {
 	fillButton = checked;

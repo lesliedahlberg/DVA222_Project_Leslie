@@ -4,14 +4,26 @@ class ElementGroup :
 	public Panel
 {
 protected:
+	//Looks
 	Color border;
 
-public:
-	ElementGroup();
-	ElementGroup(int locX, int locY, int w, int h);
-	virtual void SetBorderColor(Color color);
-	virtual void OnPaint();
+	//Helper
 	virtual void PaintElements();
+
+public:
+	//Constructor
+	ElementGroup();
+
+	//Destructor
 	~ElementGroup();
+
+	//Looks
+	virtual void SetBorderColor(Color color);
+
+	//ControlBase Override
+	virtual void OnPaint();
+
+	
+	
 };
 
