@@ -5,11 +5,15 @@
 ElementGroup::ElementGroup()
 {
 	SetBorderColor(Color(96, 125, 139));
+	title = new Label();
+	title->setText("Group");
+	Add(title);
 }
 
 //Destructor
 ElementGroup::~ElementGroup()
 {
+	delete title;
 }
 
 //Looks
@@ -26,6 +30,7 @@ void ElementGroup::OnPaint()
 	SetColor(border.R, border.G, border.B);
 	DrawRectangle(X + zeroPoint.X, Y + zeroPoint.Y, Width, Height);
 	PaintElements();
+
 }
 
 //Helper
@@ -37,4 +42,10 @@ void ElementGroup::PaintElements()
 		controls.at(i)->SetLocation(Point(10, 20 * i+10));
 		controls.at(i)->OnPaint();
 	}
+}
+
+//Title
+void ElementGroup::SetTitle(std::string title)
+{
+	this->title->setText(title);
 }

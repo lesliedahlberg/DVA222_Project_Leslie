@@ -40,6 +40,7 @@ int _tmain(int argc, char** argv)
 	CheckBoxGroup* checkBoxGroup_1 = new CheckBoxGroup();
 	checkBoxGroup_1->SetLocation(Point(10, 50));
 	checkBoxGroup_1->SetSize(Size(250, 150));
+	checkBoxGroup_1->SetTitle("Check boxes");
 	//checkBoxGroup_1->SetBackground(Color(210, 210, 210));
 	CheckBox* checkBox_1 = new CheckBox();
 	CheckBox* checkBox_2 = new CheckBox();
@@ -59,6 +60,7 @@ int _tmain(int argc, char** argv)
 	RadioButtonGroup* radioButtonGroup_1 = new RadioButtonGroup();
 	radioButtonGroup_1->SetLocation(Point(10 + 250 + 20, 50));
 	radioButtonGroup_1->SetSize(Size(250, 150));
+	radioButtonGroup_1->SetTitle("Radios");
 	//radioButtonGroup_1->SetBackground(Color(210, 210, 210));
 	RadioButton* radioButton_1 = new RadioButton(radioButtonGroup_1);
 	RadioButton* radioButton_2 = new RadioButton(radioButtonGroup_1);

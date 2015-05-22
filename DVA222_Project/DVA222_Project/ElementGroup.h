@@ -6,6 +6,7 @@ class ElementGroup :
 protected:
 	//Looks
 	Color border;
+	Label* title;
 
 	//Helper
 	virtual void PaintElements();
@@ -22,6 +23,9 @@ public:
 
 	//ControlBase Override
 	virtual void OnPaint();
+
+	//Set tile
+	virtual void SetTitle(std::string title);
 
 	
 	
