@@ -109,3 +109,23 @@ void Button::Draw()
 	buttonText.setColor(text);
 	buttonText.OnPaint();
 }
+
+//Looks
+void Button::SetColorNormal(Color background, Color border, Color text)
+{
+	background_normal = background;
+	border_normal = border;
+	text_normal = text;
+}
+void Button::SetColorHover(Color background, Color border, Color text)
+{
+	background_hover = background;
+	border_hover = border;
+	text_hover = text;
+}
+void Button::SetColorClick(Color background, Color border, Color text)
+{
+	background_click = background;
+	border_click = border;
+	text_click = text;
+}

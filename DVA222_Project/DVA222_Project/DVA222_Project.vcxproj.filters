@@ -30,9 +30,6 @@
     <ClInclude Include="ControlBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Label.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -66,6 +63,9 @@
     <ClInclude Include="RadioButtonGroup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -78,9 +78,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ControlBase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MyButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Label.cpp">
@@ -111,6 +108,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RadioButtonGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

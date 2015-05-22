@@ -16,7 +16,7 @@ RadioButtonGroup::~RadioButtonGroup()
 void RadioButtonGroup::Reset()
 {
 	int size = controls.size();
-	for (int i = 0; i < size; i++)
+	for (int i = 1; i < size; i++)
 	{
 		RadioButton* e = (RadioButton*) controls.at(i);
 		e->setStatus(false);

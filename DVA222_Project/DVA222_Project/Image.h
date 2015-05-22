@@ -5,22 +5,22 @@
 
 using namespace std;
 
-class MyButton : public UIControl
+class Image : public UIControl
 {
 protected:
 	//Bitmap
 	Bitmap *bitmap;
-
+	std::string path;
 	//Mouse event bools
 	bool hit;
 	bool pressed;
 
 public:
     //Constructor
-	MyButton();
+	Image(std::string path);
 
 	//Destructor
-	~MyButton();
+	~Image();
 
     //ControlBase Override
 	virtual void OnPaint();

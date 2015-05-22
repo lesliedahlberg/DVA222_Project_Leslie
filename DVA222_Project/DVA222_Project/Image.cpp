@@ -1,31 +1,31 @@
 #include "StdAfx.h"
-#include "MyButton.h"
+#include "Image.h"
 #include "Graphix.h"
 #include "glut.h"
 
 using namespace std;
 
 //Constructor
-MyButton::MyButton()
+Image::Image(std::string path)
 {
-
+	this->path = path;
 }
 
 //Destructor
-MyButton::~MyButton()
+Image::~Image()
 {
     delete bitmap;
 }
 
 //ControlBase Override
-void MyButton::OnPaint()
+void Image::OnPaint()
 {
         DrawBitmap(*bitmap, X+zeroPoint.X,Y+zeroPoint.Y,Width, Height);
     
 }
 
-void MyButton::OnLoaded()
+void Image::OnLoaded()
 {		
-	bitmap = new Bitmap("image.bmp");	
+	bitmap = new Bitmap(path);
 }	
 

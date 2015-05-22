@@ -59,5 +59,9 @@ public:
 	//Label
 	virtual void SetButtonText(std::string text);
 	 
+	//Looks
+	virtual void SetColorNormal(Color background, Color border, Color text);
+	virtual void SetColorHover(Color background, Color border, Color text);
+	virtual void SetColorClick(Color background, Color border, Color text);
 };
 

@@ -85,7 +85,7 @@
     <ClInclude Include="ControlBase.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Label.h" />
-    <ClInclude Include="MyButton.h" />
+    <ClInclude Include="Image.h" />
     <ClInclude Include="Panel.h" />
     <ClInclude Include="RadioButton.h" />
     <ClInclude Include="RadioButtonGroup.h" />
@@ -103,7 +103,7 @@
     <ClCompile Include="Graphix.cpp" />
     <ClCompile Include="ControlBase.cpp" />
     <ClCompile Include="Label.cpp" />
-    <ClCompile Include="MyButton.cpp" />
+    <ClCompile Include="Image.cpp" />
     <ClCompile Include="Panel.cpp" />
     <ClCompile Include="RadioButton.cpp" />
     <ClCompile Include="RadioButtonGroup.cpp" />

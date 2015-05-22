@@ -14,7 +14,7 @@
 #include "ImageBox.h"
 #include "CheckBoxGroup.h"
 #include "RadioButtonGroup.h"
-#include "MyButton.h"
+#include "Image.h"
 
 using namespace std;
 
@@ -85,7 +85,7 @@ int _tmain(int argc, char** argv)
 	freeCheckBox_1->setText("And I am a free CheckBox");
 	//freeCheckBox_1->setColor(Color(150, 0, 0));
 
-	MyButton* image_1 = new MyButton();
+	Image* image_1 = new Image("image.bmp");
 	image_1->SetLocation(Point(20, 50 + 150 + 20 + 20 + 40));
 	image_1->SetSize(Size(100, 100));
 	
