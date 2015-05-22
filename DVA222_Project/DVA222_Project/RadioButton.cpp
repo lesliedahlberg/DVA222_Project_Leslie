@@ -9,6 +9,7 @@ RadioButton::RadioButton()
 	hit = fillButton = false;
 	inGroup = false;
 	SetSize(Size(16, 16));
+	setColor(Color(69, 90, 100));
 }
 
 RadioButton::RadioButton(RadioButtonGroup* group)
@@ -18,6 +19,7 @@ RadioButton::RadioButton(RadioButtonGroup* group)
 	parent = group;
 	inGroup = true;
 	SetSize(Size(16, 16));
+	setColor(Color(69, 90, 100));
 }
 
 //Desctructor

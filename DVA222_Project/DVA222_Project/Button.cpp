@@ -8,9 +8,23 @@ Button::Button()
 	hit = pressed = false;
 
 	//Looks
-	background = Color(200, 200, 200);
-	border = Color(0, 0, 0);
-	buttonText.setColor(Color(0, 0, 0));
+	background_normal = Color(96, 125, 139);
+	border_normal = Color(114, 114, 114);
+	text_normal = Color(256, 256, 256);
+
+	background_hover = Color(69, 90, 100);
+	border_hover = Color(114, 114, 114);
+	text_hover = Color(182, 182, 182);
+
+	background_click = Color(158, 158, 158);
+	border_click = Color(114, 114, 114);
+	text_click = Color(33, 33, 33);
+
+	background = background_normal;
+	border = border_normal;
+	text = text_normal;
+
+	SetSize(Size(100, 30));
 
 }
 
@@ -24,17 +38,17 @@ Button::~Button()
 void Button::OnPaint()
 {
 	if (pressed){
-		background = Color(100, 100, 100);
-		border = Color(0, 0, 0);
-		buttonText.setColor(Color(0, 0, 0));
+		background = background_click;
+		border = border_click;
+		text = text_click;
 	}else if (hit){
-		background = Color(150, 150, 150);
-		border = Color(0, 0, 0);
-		buttonText.setColor(Color(0, 0, 0));
+		background = background_hover;
+		border = border_hover;
+		text = text_hover;
 	}else{
-		background = Color(200, 200, 200);
-		border = Color(0, 0, 0);
-		buttonText.setColor(Color(0, 0, 0));
+		background = background_normal;
+		border = border_normal;
+		text = text_normal;
 	}
 	Draw();
 }
@@ -92,5 +106,6 @@ void Button::Draw()
 	DrawRectangle(X + zeroPoint.X, Y + zeroPoint.Y, Width, Height);
 
 	//Draw Label
+	buttonText.setColor(text);
 	buttonText.OnPaint();
 }

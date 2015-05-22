@@ -18,6 +18,19 @@ protected:
 	//Looks
 	Color background;
 	Color border;
+	Color text;
+
+	Color background_normal;
+	Color border_normal;
+	Color text_normal;
+
+	Color background_hover;
+	Color border_hover;
+	Color text_hover;
+
+	Color background_click;
+	Color border_click;
+	Color text_click;
 
 	//Mouse event bools
 	bool hit;
@@ -45,6 +58,6 @@ public:
 
 	//Label
 	virtual void SetButtonText(std::string text);
-	
+	 
 };
 

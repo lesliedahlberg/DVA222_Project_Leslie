@@ -8,6 +8,7 @@ CheckBox::CheckBox()
 	hit = checked = false;
 	buttonColor = Color(250, 50, 50);
 	SetSize(Size(16, 16));
+	setColor(Color(69, 90, 100));
 }
 
 //Destructor

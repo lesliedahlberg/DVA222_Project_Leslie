@@ -4,7 +4,8 @@
 //Contructor
 Panel::Panel()
 {
-	
+	SetBackground(Color(207, 216, 220));
+
 }
 
 //Desctructor

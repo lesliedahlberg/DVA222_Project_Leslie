@@ -6,7 +6,7 @@
 //Constructor
 Label::Label()
 {
-	
+	setColor(Color(33, 33, 33));
 }
 
 //Destructor

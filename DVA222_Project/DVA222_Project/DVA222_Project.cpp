@@ -29,18 +29,18 @@ int _tmain(int argc, char** argv)
 	Window* window_1 = new Window();
 	window_1->SetLocation(Point(20, 20));
 	window_1->SetSize(Size(550, 450));
-	window_1->SetBackground(Color(235, 235, 235));
+	//window_1->SetBackground(Color(235, 235, 235));
 	window_1->setTitle("I am the window!");
 
 	Label* label_top = new Label();
 	label_top->SetLocation(Point(20, 20));
 	label_top->setText("I am Label. Actually all the text you see inside those 2 panels ...");
-	label_top->setColor(Color(50, 50, 50));
+	//label_top->setColor(Color(50, 50, 50));
 
 	CheckBoxGroup* checkBoxGroup_1 = new CheckBoxGroup();
 	checkBoxGroup_1->SetLocation(Point(10, 50));
 	checkBoxGroup_1->SetSize(Size(250, 150));
-	checkBoxGroup_1->SetBackground(Color(210, 210, 210));
+	//checkBoxGroup_1->SetBackground(Color(210, 210, 210));
 	CheckBox* checkBox_1 = new CheckBox();
 	CheckBox* checkBox_2 = new CheckBox();
 	CheckBox* checkBox_3 = new CheckBox();
@@ -59,14 +59,14 @@ int _tmain(int argc, char** argv)
 	RadioButtonGroup* radioButtonGroup_1 = new RadioButtonGroup();
 	radioButtonGroup_1->SetLocation(Point(10 + 250 + 20, 50));
 	radioButtonGroup_1->SetSize(Size(250, 150));
-	radioButtonGroup_1->SetBackground(Color(210, 210, 210));
+	//radioButtonGroup_1->SetBackground(Color(210, 210, 210));
 	RadioButton* radioButton_1 = new RadioButton(radioButtonGroup_1);
 	RadioButton* radioButton_2 = new RadioButton(radioButtonGroup_1);
 	RadioButton* radioButton_3 = new RadioButton(radioButtonGroup_1);
 	RadioButton* radioButton_4 = new RadioButton(radioButtonGroup_1);
 	radioButton_1->setText("I am a RadioButton");
 	radioButton_2->setText("I am another RadioButton");
-	radioButton_3->setText("I am THE selected RadioButton. The Only.");
+	radioButton_3->setText("I am THE selected RadioButton");
 	radioButton_4->setText("I am just another RadioButton");
 	radioButton_3->setStatus(true);
 	radioButtonGroup_1->Add(radioButton_1);
@@ -81,7 +81,7 @@ int _tmain(int argc, char** argv)
 	CheckBox* freeCheckBox_1 = new CheckBox();
 	freeCheckBox_1->SetLocation(Point(20, 50 + 150 + 20 + 20));
 	freeCheckBox_1->setText("And I am a free CheckBox");
-	freeCheckBox_1->setColor(Color(150, 0, 0));
+	//freeCheckBox_1->setColor(Color(150, 0, 0));
 
 	MyButton* image_1 = new MyButton();
 	image_1->SetLocation(Point(20, 50 + 150 + 20 + 20 + 40));
@@ -90,32 +90,32 @@ int _tmain(int argc, char** argv)
 	Panel* panel_1 = new Panel();
 	panel_1->SetLocation(Point(10 + 250 + 20, 50 + 150 + 20));
 	panel_1->SetSize(Size(250, 150));
-	panel_1->SetBackground(Color(250, 120, 120));
+	panel_1->SetBackground(Color(233, 30, 99));
 	panel_1->SetZ(-1);
 
 	Label* label_panel_1 = new Label();
 	label_panel_1->SetLocation(Point(20, 20));
 	label_panel_1->setText("I am a panel.");
-	label_panel_1->setColor(Color(50, 50, 50));
+	label_panel_1->setColor(Color(256, 256, 256));
 
 	panel_1->Add(label_panel_1);
 
 	Panel* panel_2 = new Panel();
 	panel_2->SetLocation(Point(10 + 250 + 20 - 100, 50 + 150 + 20 + 50));
 	panel_2->SetSize(Size(250, 150));
-	panel_2->SetBackground(Color(120, 250, 120));
+	panel_2->SetBackground(Color(194, 24, 91));
 	panel_2->SetZ(2);
 
 	Label* label_panel_2 = new Label();
 	label_panel_2->SetLocation(Point(20, 20));
 	label_panel_2->setText("I am also a panel.");
-	label_panel_2->setColor(Color(50, 50, 50));
+	label_panel_2->setColor(Color(256, 256, 256));
 
 	panel_2->Add(label_panel_2);
 
 	Button* button = new Button();
 	button->SetLocation(Point(20, 40));
-	button->SetSize(Size(75, 20));
+	//button->SetSize(Size(75, 20));
 	button->SetButtonText("Button");
 
 	panel_2->Add(button);

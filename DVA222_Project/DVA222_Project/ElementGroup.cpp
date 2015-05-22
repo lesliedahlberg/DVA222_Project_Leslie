@@ -4,7 +4,7 @@
 //Constructor
 ElementGroup::ElementGroup()
 {
-	
+	SetBorderColor(Color(96, 125, 139));
 }
 
 //Destructor

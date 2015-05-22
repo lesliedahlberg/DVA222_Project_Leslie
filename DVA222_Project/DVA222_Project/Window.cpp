@@ -5,7 +5,7 @@
 Window::Window()
 {
 	//Title
-	titleBarHeight = 20;
+	titleBarHeight = 30;
 
 	//Mouse event bools
 	pressed = hit = moving = false;
@@ -15,11 +15,11 @@ Window::Window()
 	panel = new Panel();
 
 	//Looks
-	SetBackground(Color(255, 255, 255));
+	SetBackground(Color(207, 216, 220));
 
 	//Title
 	title = new Label();
-	title->setColor(Color(50, 50, 50));
+	title->setColor(Color(256, 256, 256));
 
 }
 
@@ -40,7 +40,7 @@ void Window::OnLoaded()
 void Window::OnPaint()
 {
 	//Looks
-	SetColor(180, 180, 180);
+	SetColor(96, 125, 139);
 
 	//Title bar
 	FillRectangle(X, Y, Width, titleBarHeight);
@@ -150,7 +150,7 @@ void Window::SetZeroPointForControls()
 	panel->SetZeroPointForControls();
 
 	//Window title
-	title->SetZeroPoint(Point(X + 5, Y + 5));
+	title->SetZeroPoint(Point(X + 10, Y + titleBarHeight/2-5));
 	title->SetZeroPointForControls();
 }
 
