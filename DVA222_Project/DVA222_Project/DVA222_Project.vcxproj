@@ -80,6 +80,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="CheckBox.h" />
     <ClInclude Include="CheckBoxGroup.h" />
+    <ClInclude Include="Container.h" />
     <ClInclude Include="ElementGroup.h" />
     <ClInclude Include="Graphix.h" />
     <ClInclude Include="ControlBase.h" />
@@ -98,6 +99,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CheckBox.cpp" />
     <ClCompile Include="CheckBoxGroup.cpp" />
+    <ClCompile Include="Container.cpp" />
     <ClCompile Include="DVA222_Project.cpp" />
     <ClCompile Include="ElementGroup.cpp" />
     <ClCompile Include="Graphix.cpp" />

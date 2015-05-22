@@ -60,7 +60,7 @@ void UIControl::SetZ(int z)
 {
 	this->z = z;
 }
-int UIControl::GetZ()
+int UIControl::GetZ() const
 {
 	return z;
 }

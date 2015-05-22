@@ -93,7 +93,7 @@ int _tmain(int argc, char** argv)
 	panel_1->SetLocation(Point(10 + 250 + 20, 50 + 150 + 20));
 	panel_1->SetSize(Size(250, 150));
 	panel_1->SetBackground(Color(233, 30, 99));
-	panel_1->SetZ(-1);
+	panel_1->SetZ(1);
 
 	Label* label_panel_1 = new Label();
 	label_panel_1->SetLocation(Point(20, 20));

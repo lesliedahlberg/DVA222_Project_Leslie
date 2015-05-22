@@ -32,7 +32,7 @@ public:
 
 	//Z
 	virtual void SetZ(int z);
-	virtual int GetZ();
+	virtual int GetZ() const;
 
 };
 

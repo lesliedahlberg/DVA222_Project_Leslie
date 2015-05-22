@@ -13,6 +13,8 @@ Panel::~Panel()
 {
 }
 
+
+
 //Looks
 void Panel::SetBackground(Color background)
 {
@@ -20,15 +22,6 @@ void Panel::SetBackground(Color background)
 }
 
 //ControlBase Overrides
-void Panel::OnLoaded()
-{
-	int length = controls.size();
-	for (size_t i = 0; i < length; i++)
-	{
-		controls.at(i)->OnLoaded();
-	}
-}
-
 void Panel::OnPaint()
 {
 	//Set background color
@@ -39,52 +32,6 @@ void Panel::OnPaint()
 	
 	//Paint elements
 	PaintElements();
-}
-
-
-void Panel::OnKeyboard(unsigned char key, int x, int y)
-{
-	int length = controls.size();
-	for (size_t i = 0; i < length; i++)
-	{
-		controls.at(i)->OnKeyboard(key, x, y);
-	}
-}
-
-void Panel::OnMouseUp(int button, int x, int y)
-{
-	int length = controls.size();
-	for (size_t i = 0; i < length; i++)
-	{
-		controls.at(i)->OnMouseUp(button, x, y);
-	}
-}
-
-void Panel::OnMouseDown(int button, int x, int y)
-{
-	int length = controls.size();
-	for (size_t i = 0; i < length; i++)
-	{
-		controls.at(i)->OnMouseDown(button, x, y);
-	}
-}
-
-void Panel::OnMouseMove(int button, int x, int y)
-{
-	int length = controls.size();
-	for (size_t i = 0; i < length; i++)
-	{
-		controls.at(i)->OnMouseMove(button, x, y);
-	}
-}
-
-void Panel::OnResize(int width, int height)
-{
-	int length = controls.size();
-	for (size_t i = 0; i < length; i++)
-	{
-		controls.at(i)->OnResize(width, height);
-	}
 }
 
 //Custom SetZeroPointForControls
@@ -101,23 +48,12 @@ void Panel::SetZeroPointForControls()
 	}
 }
 
-//Add element to panel
-void Panel::Add(UIControl* element)
-{
-	//Set Zero Point for new control
-	element->SetZeroPoint(Point(X + zeroPoint.X, Y + zeroPoint.Y));
-	
-	//Add element
-	controls.push_back(element);
-}
-
-
-
 //Helper function for painting panel elements
 void Panel::PaintElements()
 {
 	//For for Z
-	//std::sort(controls.begin(), controls.end(), compare);
+	std::sort(controls.begin(), controls.end(), [](const UIControl* a, const UIControl* b)
+	{ return a->GetZ() < b->GetZ(); });
 	
 	//Paint controls
 	int length = controls.size();
